@@ -1,0 +1,229 @@
+/* basic rules --------------------------------------------------*/
+
+html, body {
+    scroll-behavior: smooth;
+    /*-webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.1);*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    /*cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAEZJREFUeAGt0EEKgDAUA1En9z+0qEENhA+FvlUZQqE9Bnynlmlr2iVkSY66AHrg+MddSUiU6VuxqMhYquzcCvO6PZjhx5oTQ+8Bs3EshqIAAAAASUVORK5CYII=), auto;*/
+    /*-webkit-touch-callout: none;*/
+    /*-webkit-user-select: none;*/
+    /*-moz-user-select: none;*/
+    /*-ms-user-select: none;*/
+    /*user-select: none;*/
+}
+
+.__next {
+    min-height: 100vh;
+}
+
+.__next::-webkit-scrollbar {
+    width: 14px;
+}
+
+.__next::-webkit-scrollbar-track {
+    background: #dddddd;
+}
+
+.__next::-webkit-scrollbar-thumb {
+    background-color: #777777;
+    border-radius: 6px;
+    border: 2px solid #dddddd;
+}
+
+::selection {
+    background-color: #555555;
+    color: white;
+}
+
+/* class & id-spesific rules ------------------------------------*/
+
+.link {
+    color: #c66060;
+}
+
+.emoji {
+    font-size: 0.9em;
+}
+
+.postDesc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    overflow: hidden;
+}
+
+.markdown {
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+.markdown > *:not(strong):not(img):not(em):not(span) {
+    max-width: 768px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: justify;
+}
+
+.markdown img {
+    max-width: 100%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    border-radius: 8px;
+}
+
+.markdown > p:first-of-type::first-letter {
+    font-family: "DM Serif Display", "Fira Code", monospace;
+    float: left;
+    font-size: 3em;
+    line-height: 40px;
+    padding-top: 4px;
+    padding-right: 5px;
+    padding-left: 3px;
+}
+
+.markdown h1, .markdown h2, .markdown h3 {
+    text-align: left;
+}
+
+.markdown blockquote {
+    padding-left: 1em;
+    border-left: 4px solid #bbbbbb;
+}
+
+.markdown pre, .markdown table {
+    max-width: 768px;
+    margin-right: 0!important;
+    margin-left: 0!important;
+    overflow-x: auto;
+    background: linear-gradient(90deg, #f5f2f0 0%, rgba(255, 255, 255, 0)), linear-gradient(-90deg, #f5f2f0 0%, rgba(255, 255, 255, 0)) 100% 0, linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), linear-gradient(-90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)) 100% 0;
+    background-repeat: no-repeat;
+    background-size: 100px 100%, 100px 100%, 20px 100%, 20px 100%;
+    background-attachment: local, local, scroll, scroll;
+    background-color: #f5f2f0;
+}
+
+.markdown blockquote * {
+    font-size: 1.05em;
+    line-height: 1.1em;
+}
+
+.markdown pre code {
+    font-family: "Nanum Gothic Coding", "Fira Code", monospace;
+    font-size: 0.8em;
+}
+
+.serif {
+    font-family: "DM Serif Display", serif;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.imageDisplay {
+    border-radius: 8px;
+    max-width: 850px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#header {
+    transform: rotate(180deg);
+}
+
+#header > * {
+    transform: rotate(180deg);
+}
+
+#siteTitle {
+    line-height: 1em;
+    position: relative;
+}
+
+#siteAvatar {
+    position: absolute;
+    bottom: 2px;
+    filter: brightness(85%) contrast(140%) invert(15%) sepia(10%) saturate(50%);
+}
+
+#siteAvatarBackground {
+    filter: grayscale(60%) invert(5%) sepia(20%);
+}
+
+#siteAvatarText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.1em;
+    -webkit-text-stroke: 1px #222222;
+}
+
+#siteAvatarShadow {
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#likeFloat {
+    position: sticky;
+    bottom: 30%;
+}
+
+#stars {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+}
+
+@media (max-width: 768px) {
+    #grommetParent {
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    #grommetParent::-webkit-scrollbar {
+        display: none;
+    }
+
+    .reverse-section {
+        flex-direction: column-reverse !important;
+        justify-content: center !important;
+    }
+
+    .section {
+        justify-content: center !important;
+    }
+
+    #siteAvatarBackground, #siteAvatar {
+        max-width: 75%;
+    }
+
+    #siteAvatarShadow {
+        display: none;
+    }
+
+    #siteAvatarText {
+        font-size: 330% !important;
+        line-height: 1em;
+        -webkit-text-stroke: 1px #061329;
+    }
+
+    #siteAvatarText.blog {
+        font-size: 225% !important;
+    }
+
+    .imageDisplay {
+        max-width: 100%;
+    }
+
+    .hideOnMobile {
+        display: none !important;
+    }
+}

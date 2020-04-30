@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Butler ExtraBold';
+    src: local('Butler ExtraBold'),
+    url('fonts/Butler-ExtraBold.woff2') format('woff2'),
+    url('fonts/Butler-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}

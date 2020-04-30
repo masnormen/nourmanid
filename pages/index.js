@@ -1,203 +1,201 @@
-import Head from 'next/head'
+/* eslint-disable no-irregular-whitespace */
+import React from "react";
+import {Anchor, Box, Heading, Image, Paragraph, Text} from "grommet";
+import Obfuscate from "react-obfuscate";
 
-const Home = () => (
-  <div className="container">
-    <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+import Section from "../components/section";
+import Emoji from "../components/emoji";
+import RecentPosts from "../components/recent-posts";
 
-    <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+const Index = () => {
+	return (
+		<>
+			{/*Header*/}
+			
+			<Section
+				background="accent-4"
+				fill fullPage
+				border="black"
+				reversed
+				left={<>
+					<Heading level="1" size="large" margin={{top: "none", bottom: "medium"}} id="siteTitle">
+						Nourman<br/>Hajar
+					</Heading>
+					<Paragraph margin={{vertical: "xsmall"}}>
+						I am a Web Front-End Engineer, Linux Hobbyist, and CS Student based in
+						<Text weight="bold"> Malang, Indonesia</Text>. I am currently studying at Universitas Brawijaya.
+					</Paragraph>
+					<Paragraph margin={{vertical: "xsmall"}}>
+						I have a deep love for code, and I have a belief that the future of humanity will be built upon
+						lines of <Text weight="bold">&lt;/code&gt;</Text>.
+					</Paragraph>
+				</>}
+				right={<>
+					<Box width="350px" height="350px" background="accent-3" round="full" id="siteAvatarShadow"/>
+					<Image
+						alignSelf="center"
+						width="350px"
+						fit="contain"
+						src="/assets/avabackground.gif"
+						id="siteAvatarBackground"
+						draggable="false"
+					/>
+					<Text textAlign="center" color="accent-3" size="425%" id="siteAvatarText" className="serif">
+						HELLO<br/>WORLD!
+					</Text>
+					<Image
+						alignSelf="center"
+						width="354px"
+						fit="contain"
+						src="/assets/avaoverlay.png"
+						id="siteAvatar"
+						draggable="false"
+					/>
+				</>}
+			/>
+			
+			<Section
+				background="accent-5"
+				border="black"
+				left={<>
+					<Box alignSelf="center" justify="start" align="start" fill="vertical">
+						<Heading level="2" size="medium" margin={{vertical: "xsmall"}}>
+							Feel free to check out these fresh posts from <Anchor href="/blog">
+							my blog!</Anchor> <Emoji symbol="📝" label="blog"/>
+						</Heading>
+					</Box>
+				</>}
+				right={<>
+					<Box alignSelf="center" justify="start" align="start" fill="vertical">
+						<RecentPosts/>
+					</Box>
+				</>}
+			/>
+			
+			{/*Showcase*/}
+			
+			<Section
+				background="accent-2"
+				border="black"
+				decor
+				title={<>
+					<Heading
+						alignSelf="center" level="2" size="xlarge" margin={{horizontal: "large", vertical: "none"}}
+						textAlign="center"
+					>
+						Résumé
+					</Heading>
+				</>}
+				left={<>
+					<Box alignSelf="center" justify="center" align="start" fill="vertical">
+						<Text size="xlarge" margin={{top: "none"}} className="serif">
+							EXPERIENCE
+						</Text>
+						<Paragraph color="brand" margin={{top: "xsmall", bottom: "none"}}>
+							<Text weight="bold">BEM FILKOM UB<br/></Text>
+						</Paragraph>
+						<Paragraph margin={{vertical: "none"}}>
+							<b>Vice Head of IT Department</b><br/>
+							<i>Jan 2020–present</i><br/>
+							<b>Software Engineer in IT Department</b><br/>
+							<i>Feb 2019–Dec 2019</i>
+						</Paragraph>
+						<Paragraph color="brand" margin={{top: "xsmall", bottom: "none"}}>
+							<Text weight="bold">Pesenkode.com<br/></Text>
+						</Paragraph>
+						<Paragraph margin={{top: "none"}}>
+							<b>Front-End Software Engineer</b><br/>
+							<i>Nov 2019–present</i>
+						</Paragraph>
+						
+						<Text size="xlarge" margin={{top: "medium"}} className="serif">
+							SKILLS
+						</Text>
+						<Paragraph margin={{top: "xsmall", bottom: "none"}}>
+							Front-End Development<br/>
+							Back-End Web Development<br/>
+							JAMStack Apps Development<br/>
+							Linux/UNIX Administration<br/>
+							Search Engine Optimization<br/>
+							Vector Design
+						</Paragraph>
+					</Box>
+				</>}
+				right={<>
+					<Box alignSelf="center" justify="center" align="start" fill="vertical">
+						<Text size="xlarge" margin={{top: "none"}} className="serif">
+							EDUCATION
+						</Text>
+						<Paragraph color="brand" margin={{top: "xsmall", bottom: "none"}}>
+							<Text weight="bold">Universitas Brawijaya<br/></Text>
+						</Paragraph>
+						<Paragraph margin={{vertical: "none"}}>
+							<b>Bachelor of Information Systems</b><br/>
+							<i>2018–2022 (*expected)</i>
+						</Paragraph>
+						<Paragraph color="brand" margin={{top: "xsmall", bottom: "none"}}>
+							<Text weight="bold">SMAN 5 Semarang<br/></Text>
+						</Paragraph>
+						<Paragraph margin={{top: "none"}}>
+							<b>Natural Sciences/IPA</b><br/>
+							<i>2015–2018</i>
+						</Paragraph>
+						
+						<Text size="xlarge" margin={{top: "medium"}} className="serif">
+							TOOLS OF THE TRADE
+						</Text>
+						<Paragraph margin={{top: "xsmall", bottom: "none"}}>
+							React.js<br/>
+							Express.js/Polka<br/>
+							JetBrains IDEs<br/>
+							Visual Studio Code<br/>
+							Arch Linux<br/>
+							Figma<br/>
+							Inkscape<br/>
+							Microsoft Office
+						</Paragraph>
+					</Box>
+				</>}
+			/>
+			
+			{/*Contacts*/}
+			
+			<Section
+				background="accent-5"
+				border="black"
+				centeredLeft
+				left={<>
+					<pre id="stars">
+						·  .    ⊹     · ✺  +<br/>
+						　 ˚  .   + 　 *　  　.<br/>
+						*　 　 　⊹  .　　 ✺<br/>
+						. .  * ·　　✵     +<br/>
+							.  . 　.   ⊹   ·<br/>
+						　   .  .     ✹   ·<br/>
+						　·　   . 　　 ·　　  ✹
+					</pre>
+				</>}
+				right={<>
+					<Text size="medium" margin={{top: "none", bottom: "xsmall"}} className="serif">
+						Got any questions?
+					</Text>
+					<Heading level="2" size="xlarge" margin={{top: "none", bottom: "small"}}>
+						Contact me!
+					</Heading>
+					<Paragraph margin={{vertical: "xsmall"}}>
+						I&apos;m currently looking for a remote part-time or internship at an agency. So feel free to
+						drop me a line at:
+					</Paragraph>
+					<Paragraph margin={{vertical: "xsmall"}}>
+						<b>
+							<Emoji symbol="👉" label="this"/>&nbsp;
+							<Obfuscate className="link" linkText="return false();" email="nourmanhajar@gmail.com"/>
+						</b>
+					</Paragraph>
+				</>}
+			/>
+		</>
+	);
+};
 
-      <p className="description">
-        Get started by editing <code>pages/index.js</code>
-      </p>
-
-      <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-
-    <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by <img src="/vercel.svg" alt="Vercel Logo" />
-      </a>
-    </footer>
-
-    <style jsx>{`
-      .container {
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      main {
-        padding: 5rem 0;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer {
-        width: 100%;
-        height: 100px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .title a {
-        color: #0070f3;
-        text-decoration: none;
-      }
-
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
-        text-decoration: underline;
-      }
-
-      .title {
-        margin: 0;
-        line-height: 1.15;
-        font-size: 4rem;
-      }
-
-      .title,
-      .description {
-        text-align: center;
-      }
-
-      .description {
-        line-height: 1.5;
-        font-size: 1.5rem;
-      }
-
-      code {
-        background: #fafafa;
-        border-radius: 5px;
-        padding: 0.75rem;
-        font-size: 1.1rem;
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-      }
-
-      .grid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        max-width: 800px;
-        margin-top: 3rem;
-      }
-
-      .card {
-        margin: 1rem;
-        flex-basis: 45%;
-        padding: 1.5rem;
-        text-align: left;
-        color: inherit;
-        text-decoration: none;
-        border: 1px solid #eaeaea;
-        border-radius: 10px;
-        transition: color 0.15s ease, border-color 0.15s ease;
-      }
-
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
-      }
-
-      .card h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        font-size: 1.25rem;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 600px) {
-        .grid {
-          width: 100%;
-          flex-direction: column;
-        }
-      }
-    `}</style>
-
-    <style jsx global>{`
-      html,
-      body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-    `}</style>
-  </div>
-)
-
-export default Home
+export default Index;
