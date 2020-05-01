@@ -2,7 +2,6 @@ import React from "react";
 import {Grommet} from "grommet";
 import {deepMerge} from "grommet/utils";
 
-
 import {grommet} from "grommet/themes";
 import {siteTheme} from "../styles/siteTheme";
 import "normalize.css";
