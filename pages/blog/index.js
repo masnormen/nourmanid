@@ -24,6 +24,7 @@ const BlogHome = ({postData}) => {
 			<Head>
 				<title>Blog | Nourman Hajar</title>
 			</Head>
+			
 			<Section
 				background="accent-5"
 				border="black"
