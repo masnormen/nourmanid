@@ -46,8 +46,8 @@ const Footer = () => {
 						<Text textAlign="center" size="small" weight="bold">
 							© 2020. Built with&nbsp;
 							<Anchor
-								target="_blank" href="https://reactjs.org/"
-								label="React.js"
+								target="_blank" href="https://nextjs.org/"
+								label="Next.js"
 							/>
 							&nbsp;and <Emoji symbol="❤️" label="heart"/>
 						</Text>

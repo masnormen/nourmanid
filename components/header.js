@@ -1,20 +1,19 @@
 import React from "react";
-import {Anchor, Box, Image, Text} from "grommet";
+import {Anchor, Box, Text} from "grommet";
+import { useRouter } from "next/router";
 
 import Section from "../components/section";
 import Emoji from "../components/emoji";
-// import {useLocation} from "react-router";
 
 const Header = () => {
-	// let location = useLocation().pathname;
-	let isHome = false, isBlog = true, isWork = false, is404 = false;
-	//
-	// if (location === "/") isHome = true;
-	// else if (location.startsWith("/work")) isWork = true;
-	// else if (location.startsWith("/blog")) isBlog = true;
-	// else is404 = true;
-	//
-	// if (is404 || isHome) return null;
+	let location = useRouter().pathname;
+	let isHome = false, isBlog = true, isWork = false;
+
+	if (location === "/") isHome = true;
+	else if (location.startsWith("/work")) isWork = true;
+	else if (location.startsWith("/blog")) isBlog = true;
+
+	if (isHome) return null;
 	
 	return (
 		<>
@@ -22,48 +21,41 @@ const Header = () => {
 				isHeader
 				id="header"
 				background={{
-					"color": "accent-4",
-					"position": "center bottom",
-					"repeat": "no-repeat",
-					"size": "cover",
-					"image": "url(/assets/grassback.png)"
+					color: "accent-4",
+					position: "center",
+					repeat: "no-repeat",
+					size: "cover",
+					image: "url(/assets/grassback.png)"
 				}}
-				border="black"
+				border="accent-3"
 				title={<>
 					<Box
-						background="black" margin="large" round="small" align="center"
-						style={{textAlign: "center"}} className="hideOnMobile"
-						pad={{vertical: "xsmall", horizontal: "small"}}
+						background="black" margin={{horizontal: "xlarge", vertical: "none"}} round="small" style={{textAlign: "center"}}
+						pad={{vertical: "xsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
 					>
-						{isBlog && <>Nourman Hajar</>}
-						{isWork && <>My Portfolio</>}
+						<Anchor alignSelf="center" href="/">
+							<Emoji symbol="🏠" label="home"/> Go to home
+						</Anchor>
 					</Box>
-					<Box style={{position: "relative"}}>
-						<Box width="200px" height="200px" background="accent-3" round="full" id="siteAvatarShadow"/>
-						<Image
-							alignSelf="center"
-							width="200px"
-							fit="contain"
-							src="/assets/avabackground.gif"
-							id="siteAvatarBackground"
-							draggable="false"
-						/>
+					<Box height="125px" margin={{horizontal: "medium", vertical: "none"}}>
 						<Text
 							textAlign="center" color="accent-3" size="200%" id="siteAvatarText"
 							className="serif blog"
-							style={{textTransform: "uppercase"}}
+							style={{textTransform: "lowercase"}}
 						>
-							{isBlog && <>Dumb<br/>Brain<br/>Dump</>}
+							{isBlog && <>Nourman<br/>Hajar</>}
 							{isWork && <>Works<br/>and<br/>Portfolio</>}
 						</Text>
 					</Box>
 					<Box
-						background="black" margin="large" round="small" style={{textAlign: "center"}}
+						background="black" margin={{horizontal: "xlarge", vertical: "none"}} round="small" align="center"
+						style={{textAlign: "center"}} className="hideOnMobile"
 						pad={{vertical: "xsmall", horizontal: "small"}}
 					>
-						<Anchor alignSelf="center" href="/">
-							Go to home <Emoji symbol="🏠" label="home"/>
-						</Anchor>
+						<Text weight="bold">
+							{isBlog && <>My Little Blog</>}
+							{isWork && <>My Portfolio</>}
+						</Text>
 					</Box>
 				</>}
 			/>

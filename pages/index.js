@@ -1,17 +1,31 @@
 /* eslint-disable no-irregular-whitespace */
 import React from "react";
 import {Anchor, Box, Heading, Image, Paragraph, Text} from "grommet";
+import Link from "next/link";
+import Head from "next/head";
+import axios from "axios";
 import Obfuscate from "react-obfuscate";
 
 import Section from "../components/section";
 import Emoji from "../components/emoji";
-import RecentPosts from "../components/recent-posts";
 
-const Index = () => {
+export async function getStaticProps() {
+	let postData = null;
+	const response = await axios.get("https://nourman.id/api/get-post/all");
+	postData = response.data.reverse().slice(0,3).map(post => {
+		//remove unnecessary payload
+		delete post["body"];
+		return post;
+	});
+	return {props: {postData}};
+}
+
+const Index = ({postData}) => {
 	return (
 		<>
-			{/*Header*/}
-			
+			<Head>
+				<title>Nourman Hajar</title>
+			</Head>
 			<Section
 				background="accent-4"
 				fill fullPage
@@ -67,7 +81,24 @@ const Index = () => {
 				</>}
 				right={<>
 					<Box alignSelf="center" justify="start" align="start" fill="vertical">
-						<RecentPosts/>
+						{postData.map((item, index) =>
+							<Heading key={index} level="2" size="small" margin={{vertical: "xsmall"}}>
+								<Link passHref href={"/blog/" + item.slug}>
+									<Anchor>
+										{item.title}
+									</Anchor>
+								</Link>
+								<Text
+									size="medium" margin={{top: "medium", bottom: "none"}}
+									className="serif"
+								>
+									&nbsp;&nbsp;{item.category}
+								</Text>
+							</Heading>
+						)}
+						<Anchor href="/blog" margin={{top: "medium"}}>
+							<Emoji symbol="👉" label="this"/> and more!
+						</Anchor>
 					</Box>
 				</>}
 			/>
