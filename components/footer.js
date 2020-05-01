@@ -3,6 +3,7 @@ import {Anchor, Box, Text} from "grommet";
 
 import Section from "../components/section";
 import Emoji from "../components/emoji";
+import Link from "next/link";
 
 const Footer = () => {
 	// let location = useLocation();
@@ -23,21 +24,29 @@ const Footer = () => {
 				left={<>
 					<Box background="black" round="small" pad={{vertical: "xsmall", horizontal: "small"}}>
 						<Text textAlign="center" size="small" weight="bold">
-							<Anchor color="white" href="/">
-								<Emoji symbol="🏠" label="home"/>home
-							</Anchor>
+							<Link passHref href="/">
+								<Anchor color="white">
+									<Emoji symbol="🏠" label="home"/>home
+								</Anchor>
+							</Link>
 							&nbsp;/&nbsp;
-							<Anchor color="white" href="/blog">
-								<Emoji symbol="📝" label="blog"/>blog
-							</Anchor>
+							<Link passHref href="/blog">
+								<Anchor color="white">
+									<Emoji symbol="📝" label="blog"/>blog
+								</Anchor>
+							</Link>
 							&nbsp;/&nbsp;
-							<Anchor color="white" href="/works">
-								<Emoji symbol="💻" label="works"/>works
-							</Anchor>
+							<Link passHref href="/works">
+								<Anchor color="white">
+									<Emoji symbol="💻" label="works"/>works
+								</Anchor>
+							</Link>
 							&nbsp;/&nbsp;
-							<Anchor color="white" href="/contact">
-								<Emoji symbol="📞" label="contact"/>contact
-							</Anchor>
+							<Link passHref href="/contact">
+								<Anchor color="white">
+									<Emoji symbol="📞" label="contact"/>contact
+								</Anchor>
+							</Link>
 						</Text>
 					</Box>
 				</>}

@@ -6,6 +6,7 @@ import axios from "axios";
 import Section from "../../components/section";
 import Emoji from "../../components/emoji";
 import Head from "next/head";
+import Link from "next/link";
 
 export async function getStaticProps() {
 	let postData = null;
@@ -26,7 +27,7 @@ const BlogHome = ({postData}) => {
 			</Head>
 			
 			<Section
-				background="accent-5"
+				background="accent-2"
 				border="black"
 				centeredLeft
 				left={<>
@@ -43,16 +44,18 @@ const BlogHome = ({postData}) => {
 						{postData[0].category}
 					</Text>
 					<Heading level="2" size="medium" margin={{top: "none", bottom: "small"}}>
-						<Anchor href={"/blog/" + postData[0].slug}>{postData[0].title}</Anchor>
+						<Link passHref href="/blog/[slug]" as={`/blog/${postData[0].slug}`}>
+							<Anchor>{postData[0].title}</Anchor>
+						</Link>
 					</Heading>
 					<Paragraph margin={{vertical: "xsmall"}} className="postDesc">
 						<Markdown>{postData[0].body}</Markdown>
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
 						<b>
-							<Anchor href={"/blog/" + postData[0].slug}>
-								<Emoji symbol="👉" label="this"/> Read More...
-							</Anchor>
+							<Link passHref href="/blog/[slug]" as={`/blog/${postData[0].slug}`}>
+								<Anchor><Emoji symbol="👉" label="this"/> Read More...</Anchor>
+							</Link>
 						</b>
 					</Paragraph>
 				</>}
@@ -68,18 +71,18 @@ const BlogHome = ({postData}) => {
 						{postData[1].category}
 					</Text>
 					<Heading level="2" size="medium" margin={{top: "none", bottom: "small"}}>
-						<Anchor href={"/blog/" + postData[1].slug}>
-							{postData[1].title}
-						</Anchor>
+						<Link passHref href="/blog/[slug]" as={`/blog/${postData[1].slug}`}>
+							<Anchor>{postData[1].title}</Anchor>
+						</Link>
 					</Heading>
 					<Paragraph margin={{vertical: "xsmall"}} className="postDesc">
 						<Markdown>{postData[1].body}</Markdown>
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
 						<b>
-							<Anchor href={"/blog/" + postData[1].slug}>
-								<Emoji symbol="👉" label="this"/> Read More...
-							</Anchor>
+							<Link passHref href="/blog/[slug]" as={`/blog/${postData[1].slug}`}>
+								<Anchor><Emoji symbol="👉" label="this"/> Read More...</Anchor>
+							</Link>
 						</b>
 					</Paragraph>
 				</>}
@@ -105,9 +108,9 @@ const BlogHome = ({postData}) => {
 									{item.category}
 								</Text>
 								<Heading level="2" size="small" margin={{vertical: "xsmall"}}>
-									<Anchor href={"/blog/" + item.slug}>
-										{item.title}
-									</Anchor>
+									<Link passHref href="/blog/[slug]" as={`/blog/${item.slug}`}>
+										<Anchor>{item.title}</Anchor>
+									</Link>
 								</Heading>
 								<Paragraph className="postDesc" margin={{vertical: "none"}}>
 									{item.body}
@@ -124,9 +127,9 @@ const BlogHome = ({postData}) => {
 						{postData.slice(4).map((item) =>
 							<>
 								<Heading level="2" size="small" margin={{vertical: "xsmall"}}>
-									<Anchor href={"/blog/" + item.slug}>
-										{item.title}
-									</Anchor>
+									<Link passHref href="/blog/[slug]" as={`/blog/${item.slug}`}>
+										<Anchor>{item.title}</Anchor>
+									</Link>
 									<Text
 										size="medium" margin={{top: "medium", bottom: "none"}}
 										className="serif"

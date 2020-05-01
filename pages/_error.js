@@ -5,8 +5,9 @@ import Head from "next/head";
 
 import Section from "../components/section";
 import Emoji from "../components/emoji";
+import Link from "next/link";
 
-const Error = ({ statusCode }) => {
+const Error = ({statusCode}) => {
 	return (
 		<>
 			<Head>
@@ -43,9 +44,11 @@ const Error = ({ statusCode }) => {
 					>
 						Error :(
 					</Heading>
-					<Anchor alignSelf="center" href="/">
-						&larr; Back to the homepage <Emoji symbol="🏠" label="home"/>
-					</Anchor>
+					<Link passHref href="/">
+						<Anchor alignSelf="center">
+							&larr; Back to the homepage <Emoji symbol="🏠" label="home"/>
+						</Anchor>
+					</Link>
 				</>}
 			/>
 		</>

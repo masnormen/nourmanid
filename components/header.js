@@ -1,61 +1,56 @@
 import React from "react";
 import {Anchor, Box, Text} from "grommet";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 
 import Section from "../components/section";
 import Emoji from "../components/emoji";
+import Link from "next/link";
 
-const Header = () => {
+const Header = (props) => {
 	let location = useRouter().pathname;
-	let isHome = false, isBlog = true, isWork = false;
-
-	if (location === "/") isHome = true;
-	else if (location.startsWith("/work")) isWork = true;
-	else if (location.startsWith("/blog")) isBlog = true;
-
-	if (isHome) return null;
+	let hide = location === "/" || location === "/404";
+	
+	if (hide && !props.forceShow) return null;
 	
 	return (
 		<>
 			<Section
 				isHeader
 				id="header"
-				background={{
-					color: "accent-4",
-					position: "center",
-					repeat: "no-repeat",
-					size: "cover",
-					image: "url(/assets/grassback.png)"
-				}}
-				border="accent-3"
+				background="accent-5"
+				border="accent-2"
 				title={<>
-					<Box
-						background="black" margin={{horizontal: "xlarge", vertical: "none"}} round="small" style={{textAlign: "center"}}
-						pad={{vertical: "xsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
-					>
-						<Anchor alignSelf="center" href="/">
-							<Emoji symbol="🏠" label="home"/> Go to home
-						</Anchor>
-					</Box>
-					<Box height="125px" margin={{horizontal: "medium", vertical: "none"}}>
-						<Text
-							textAlign="center" color="accent-3" size="200%" id="siteAvatarText"
-							className="serif blog"
-							style={{textTransform: "lowercase"}}
+					<Box direction="row" justify="center" align="center" width="100%">
+						<Box height="70px" margin={{horizontal: "small", vertical: "none"}} justify="center">
+							<Text
+								textAlign="center" color="accent-3" size="35px" style={{textTransform: "lowercase"}}
+								id="siteText" className="serif" alignSelf="center"
+							>
+								Nourman Hajar
+							</Text>
+						</Box>
+						<Box
+							background="accent-2" margin={{horizontal: "small", top: "xsmall"}} round="small"
+							style={{textAlign: "center"}} alignSelf="center"
+							pad={{vertical: "xxsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
 						>
-							{isBlog && <>Nourman<br/>Hajar</>}
-							{isWork && <>Works<br/>and<br/>Portfolio</>}
-						</Text>
-					</Box>
-					<Box
-						background="black" margin={{horizontal: "xlarge", vertical: "none"}} round="small" align="center"
-						style={{textAlign: "center"}} className="hideOnMobile"
-						pad={{vertical: "xsmall", horizontal: "small"}}
-					>
-						<Text weight="bold">
-							{isBlog && <>My Little Blog</>}
-							{isWork && <>My Portfolio</>}
-						</Text>
+							<Link passHref href="/">
+								<Anchor alignSelf="center" size="small">
+									<Emoji symbol="🏠" label="home"/> Home
+								</Anchor>
+							</Link>
+						</Box>
+						<Box
+							background="accent-4" margin={{horizontal: "small", top: "xsmall"}} round="small"
+							style={{textAlign: "center"}} alignSelf="center"
+							pad={{vertical: "xxsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
+						>
+							<Link passHref href="/blog">
+								<Anchor alignSelf="center" size="small">
+									<Emoji symbol="📝" label="blog"/> Blog
+								</Anchor>
+							</Link>
+						</Box>
 					</Box>
 				</>}
 			/>

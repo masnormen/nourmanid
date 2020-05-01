@@ -6,6 +6,7 @@ import Head from "next/head";
 
 import Section from "../../components/section";
 import Emoji from "../../components/emoji";
+import Link from "next/link";
 //
 // export async function getServerSideProps() {
 // 	const slug = useRouter().pathname;
@@ -48,9 +49,11 @@ const BlogPost = ({postData}) => {
 						round="small"
 						margin={{vertical: "medium"}}
 					>
-						<Anchor alignSelf="center" href="/blog">
-							&larr; I want to read more post <Emoji symbol="📝" label="blog"/>
-						</Anchor>
+						<Link passHref href="/blog">
+							<Anchor alignSelf="center">
+								&larr; I want to read more post <Emoji symbol="📝" label="blog"/>
+							</Anchor>
+						</Link>
 					</Box>
 					
 					{/*Post Title*/}
@@ -58,9 +61,11 @@ const BlogPost = ({postData}) => {
 						textAlign="center" style={{width: "100%", maxWidth: "850px", overflowWrap: "break-word"}}
 						alignSelf="center" level="1" margin={{top: "medium"}}
 					>
-						<Anchor href="post">
-							{postData.title}
-						</Anchor>
+						<Link passHref href="/blog/[slug]" as={`/blog/${postData.slug}`}>
+							<Anchor>
+								{postData.title}
+							</Anchor>
+						</Link>
 					</Heading>
 					<Text size="large" textAlign="center" margin={{top: "none", bottom: "large"}}>
 						Published on <b>{postData.publishedOn}</b> in <b>{postData.category}</b>
@@ -114,12 +119,10 @@ const BlogPost = ({postData}) => {
 };
 
 export async function getStaticPaths() {
-	let data = await axios.get("https://nourman.id/api/get-post/all");
-	
+	let data = await axios.get("https://nourman.id/api/get/all");
 	const paths = data.data.map(post => ({
 		params: {slug: post.slug},
 	}));
-	
 	return {paths, fallback: false};
 }
 

@@ -1,6 +1,8 @@
 import Document, {Html, Head, Main, NextScript} from "next/document";
 import {ServerStyleSheet} from "styled-components";
 import React from "react";
+import Router from "next/router";
+import NProgress from "nprogress";
 
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -24,6 +26,9 @@ export default class MyDocument extends Document {
 	}
 	
 	render() {
+		Router.onRouteChangeStart = () => NProgress.start();
+		Router.onRouteChangeComplete = () => NProgress.done();
+		Router.onRouteChangeError = () => NProgress.done();
 		return (
 			<Html lang="en">
 				<Head/>

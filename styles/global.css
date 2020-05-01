@@ -134,7 +134,11 @@ html, body {
 }
 
 #header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
     transform: rotate(180deg);
+    box-shadow: 0 -15px 25px 20px rgba(229, 233, 198, 0.6);
 }
 
 #header > * {
@@ -162,6 +166,11 @@ html, body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    line-height: 1.1em;
+    -webkit-text-stroke: 1px #222222;
+}
+
+#header #siteText {
     line-height: 1.1em;
     -webkit-text-stroke: 1px #222222;
 }
@@ -217,8 +226,12 @@ html, body {
         -webkit-text-stroke: 1px #061329;
     }
 
-    #siteAvatarText.blog {
+    #header #siteAvatarText {
         font-size: 225% !important;
+    }
+
+    #nprogress .spinner::before {
+        display: none;
     }
 
     .imageDisplay {
@@ -227,5 +240,96 @@ html, body {
 
     .hideOnMobile {
         display: none !important;
+    }
+}
+
+/* Make clicks pass-through */
+#nprogress {
+    pointer-events: none;
+}
+
+#nprogress .bar {
+    background: #2299dd;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    box-shadow: 0 0 10px #2299dd, 0 0 5px #2299dd;
+    opacity: 1;
+    -webkit-transform: rotate(3deg) translate(0px, -4px);
+    -ms-transform: rotate(3deg) translate(0px, -4px);
+    transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    top: 28px;
+    right: 50px
+}
+
+#nprogress .spinner::before {
+    position: fixed;
+    z-index: 9999;
+    top: 33px;
+    right: 100px;
+    content: "FETCHING...";
+    font-family: "Fira Sans Condensed", monospace;
+    font-weight: bold;
+    font-size: 1.2em;
+    color:  #c66060;
+}
+
+#nprogress .spinner-icon {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 5px solid #c66060;
+    border-right-color: #F2F6D0;
+    border-bottom-color: #F2F6D0;
+    border-radius: 50%;
+    -webkit-animation: nprogress-spinner 400ms linear infinite;
+    animation: nprogress-spinner 400ms linear infinite;
+    box-shadow: inset 0 0 8px 0 rgba(50, 50, 50, 0.6), 0 0 8px 0 rgba(50, 50, 50, 0.6);
+}
+
+.nprogress-custom-parent {
+    overflow: hidden;
+    position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+    position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes nprogress-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
