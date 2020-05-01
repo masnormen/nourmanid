@@ -11,7 +11,7 @@ import Emoji from "../components/emoji";
 
 export async function getStaticProps() {
 	let postData = null;
-	const response = await axios.get("https://nourman.id/api/get-post/all");
+	const response = await axios.get("https://nourman.id/api/get/all");
 	postData = response.data.reverse().slice(0,3).map(post => {
 		//remove unnecessary payload
 		delete post["body"];

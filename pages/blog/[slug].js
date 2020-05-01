@@ -124,7 +124,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-	let postData = await axios.get(`https://nourman.id/api/get-post/${params.slug}`)
+	let postData = await axios.get(`https://nourman.id/api/get/${params.slug}`)
 		.then(response => {
 			let post = response.data[0];
 			post.body = unescapeJS(post.body);

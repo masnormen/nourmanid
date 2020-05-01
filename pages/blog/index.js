@@ -9,7 +9,7 @@ import Head from "next/head";
 
 export async function getStaticProps() {
 	let postData = null;
-	const response = await axios.get("https://nourman.id/api/get-post/all");
+	const response = await axios.get("https://nourman.id/api/get/all");
 	postData = response.data.map(post => {
 		post.body = unescapeJS(post.body).substr(0, 350);
 		return post;
