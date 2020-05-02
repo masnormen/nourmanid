@@ -7,8 +7,8 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    -webkit-tap-highlight-color: transparent;
     /*cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAEZJREFUeAGt0EEKgDAUA1En9z+0qEENhA+FvlUZQqE9Bnynlmlr2iVkSY66AHrg+MddSUiU6VuxqMhYquzcCvO6PZjhx5oTQ+8Bs3EshqIAAAAASUVORK5CYII=), auto;*/
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -97,14 +97,21 @@ html, body {
 
 .markdown pre, .markdown table {
     max-width: 768px;
-    margin-right: 0!important;
-    margin-left: 0!important;
+    border: 3px solid #F9E784;
+    border-radius: 8px;
+    box-sizing: border-box;
     overflow-x: auto;
     background: linear-gradient(90deg, #f5f2f0 0%, rgba(255, 255, 255, 0)), linear-gradient(-90deg, #f5f2f0 0%, rgba(255, 255, 255, 0)) 100% 0, linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)), linear-gradient(-90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)) 100% 0;
     background-repeat: no-repeat;
     background-size: 100px 100%, 100px 100%, 20px 100%, 20px 100%;
     background-attachment: local, local, scroll, scroll;
     background-color: #f5f2f0;
+    -webkit-tap-highlight-color: initial;
+    -webkit-touch-callout: default;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 .markdown blockquote * {
@@ -138,7 +145,7 @@ html, body {
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: 0 15px 25px 20px rgba(229, 233, 198, 0.6);
+    box-shadow: 0 10px 30px 16px rgba(229, 233, 198, 0.7);
 }
 
 #siteTitle {

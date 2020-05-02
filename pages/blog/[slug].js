@@ -3,29 +3,24 @@ import {Anchor, Box, Heading, Image, Markdown, Text} from "grommet";
 import unescapeJS from "unescape-js";
 import axios from "axios";
 import Head from "next/head";
+import Link from "next/link";
+import {Facebook, Linkedin, Twitter} from "grommet-icons";
+import {
+	FacebookShareButton,
+	TwitterShareButton,
+	LinkedinShareButton,
+	WhatsappShareButton,
+	WhatsappIcon
+} from "react-share";
 
 import Section from "../../components/section";
 import Emoji from "../../components/emoji";
-import Link from "next/link";
-//
-// export async function getServerSideProps() {
-// 	const slug = useRouter().pathname;
-// 	let postData = null;
-// 	const response = await axios.get(`https://nourman.id/api/get-post/${slug}`);
-// 	postData = response.data.map(post => {
-// 		//remove unnecessary payload
-// 		delete post["body"];
-// 		return post;
-// 	}).slice(0, 3);
-// 	postData.reverse();
-// 	return {props: {postData}};
-// }
 
 const BlogPost = ({postData}) => {
 	return (
 		<>
 			<Head>
-				<title>{postData.title}</title>
+				<title>{postData.title} · Nourman Hajar</title>
 				<link
 					rel="stylesheet"
 					href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.20.0/themes/prism.min.css"
@@ -36,7 +31,7 @@ const BlogPost = ({postData}) => {
 			</Head>
 			<Section
 				background="accent-5"
-				border="black"
+				border="dark-2"
 				blogPost
 				title={<>
 					{/*Go Back to Index Button*/}
@@ -88,29 +83,34 @@ const BlogPost = ({postData}) => {
 					
 					{/*Like Button*/}
 					<Box
+						direction="row-responsive"
 						background="accent-3"
-						alignSelf="center"
 						pad={{
-							vertical: "small",
-							horizontal: "medium"
+							top: "xsmall",
+							horizontal: "small"
 						}}
 						round="small"
-						border={{
-							side: "all",
-							size: "medium",
-							color: "accent-2"
-						}}
 						margin={{top: "large"}}
+						justify="center"
+						align="stretch"
+						gap="small"
 					>
-						<Anchor
-							alignSelf="center"
-							onClick={() => {
-								// if (isLiked === 1) setIsLiked(-1);
-								// else setIsLiked(1);
-							}}
+						<Text margin={{top: "xxsmall"}} weight="bold">SHARE THIS!</Text>
+						<FacebookShareButton url={`https://nourman.id/blog/${postData.slug}`}>
+							<Facebook size="medium" color="black"/>
+						</FacebookShareButton>
+						<TwitterShareButton
+							url={`https://nourman.id/blog/${postData.slug}`}
+							title={postData.title}
 						>
-							I LIKE THIS! <Emoji symbol="👍" label="like"/>
-						</Anchor>
+							<Twitter size="medium" color="black"/>
+						</TwitterShareButton>
+						<LinkedinShareButton url={`https://nourman.id/blog/${postData.slug}`}>
+							<Linkedin size="medium" color="black"/>
+						</LinkedinShareButton>
+						<WhatsappShareButton url={`https://nourman.id/blog/${postData.slug}`}>
+							<WhatsappIcon size="30px" round/>
+						</WhatsappShareButton>
 					</Box>
 				</>}
 			/>
