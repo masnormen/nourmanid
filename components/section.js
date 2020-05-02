@@ -14,7 +14,7 @@ const Section = (props) => {
 			justify="center"
 			pad={props.blogPost ? "medium" : props.isHeader ? "xsmall" : "xlarge"}
 			border={props.border ? {
-				side: props.isHeader ? "top" : "bottom",
+				side: "bottom",
 				size: "medium",
 				color: props.border
 			} : false}
