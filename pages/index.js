@@ -29,6 +29,7 @@ const Index = ({postData}) => {
 			</Head>
 			<Section
 				background="accent-4"
+				border="accent-1"
 				fill fullPage
 				reversed
 				left={<>
@@ -36,11 +37,11 @@ const Index = ({postData}) => {
 						Nourman<br/>Hajar
 					</Heading>
 					<Paragraph margin={{vertical: "xsmall"}}>
-						I am a Web Front-End Engineer, Linux Hobbyist, and CS Student based in
+						I am a Front-End Engineer, Linux Hobbyist, JAMstack admirer, and CS Student based in
 						<Text weight="bold"> Malang, Indonesia</Text>. I am currently studying at Universitas Brawijaya.
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
-						I have a deep love for code, and I have a belief that the future of humanity will be built upon
+						I have a love for coding. And I have a belief that the future of humanity will be built upon
 						lines of <Text weight="bold">&lt;/code&gt;</Text>.
 					</Paragraph>
 				</>}
@@ -112,7 +113,7 @@ const Index = ({postData}) => {
 				{/*Showcase*/}
 				
 				<Section
-					background="accent-2"
+					background="light-5"
 					border="dark-3"
 					decor
 					title={<>
@@ -198,19 +199,20 @@ const Index = ({postData}) => {
 				{/*Contacts*/}
 				
 				<Section
+					id="contact"
 					background="accent-5"
 					border="dark-3"
 					centeredLeft
 					left={<>
-					<pre id="stars">
-						·  .    ⊹     · ✺  +<br/>
-						　 ˚  .   + 　 *　  　.<br/>
-						*　 　 　⊹  .　　 ✺<br/>
-						. .  * ·　　✵     +<br/>
-							.  . 　.   ⊹   ·<br/>
-						　   .  .     ✹   ·<br/>
-						　·　   . 　　 ·　　  ✹
-					</pre>
+						<pre id="stars">
+							·  .    ⊹     · ✺  +<br/>
+							　 ˚  .   + 　 *　  　.<br/>
+							*　 　 　⊹  .　　 ✺<br/>
+							. .  * ·　　✵     +<br/>
+								.  . 　.   ⊹   ·<br/>
+							　   .  .     ✹   ·<br/>
+							　·　   . 　　 ·　　  ✹
+						</pre>
 					</>}
 					right={<>
 						<Text size="medium" margin={{top: "none", bottom: "xsmall"}} className="serif">

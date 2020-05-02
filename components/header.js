@@ -18,7 +18,7 @@ const Header = (props) => {
 				isHeader
 				id="header"
 				background="accent-5"
-				border="accent-2"
+				border="accent-4"
 				className={props.className}
 				title={<>
 					<Box direction="row" justify="center" align="center" width="100%">

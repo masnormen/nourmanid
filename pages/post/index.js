@@ -27,7 +27,7 @@ const BlogHome = ({postData}) => {
 			</Head>
 			
 			<Section
-				background="accent-2"
+				background="accent-5"
 				border="dark-2"
 				centeredLeft
 				left={<>
@@ -62,7 +62,7 @@ const BlogHome = ({postData}) => {
 			/>
 			
 			<Section
-				background="accent-5"
+				background="accent-2"
 				border="dark-2"
 				centeredRight
 				reversed
@@ -98,7 +98,7 @@ const BlogHome = ({postData}) => {
 			/>
 			
 			<Section
-				background="accent-2"
+				background="accent-5"
 				border="dark-2"
 				left={<>
 					<Box alignSelf="center" justify="start" align="start" fill="vertical">

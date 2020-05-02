@@ -71,8 +71,8 @@ html, body {
 
 .markdown img {
     max-width: 100%;
-    margin-right: auto !important;
-    margin-left: auto !important;
+    margin: 2em auto!important;
+    display: block;
     border: 3px solid #F9E784;
     border-radius: 8px;
     box-sizing: border-box;
@@ -147,7 +147,7 @@ html, body {
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: 0 10px 30px 16px rgba(229, 233, 198, 0.7);
+    box-shadow: 0 10px 20px 16px rgba(229, 233, 198, 0.7);
 }
 
 #siteTitle {
@@ -173,6 +173,15 @@ html, body {
     transform: translate(-50%, -50%);
     line-height: 1.1em;
     -webkit-text-stroke: 1px #222222;
+}
+
+
+#header #siteAvatarBackground {
+    filter: grayscale(100%) invert(100%) brightness(60%) contrast(70%);
+}
+
+#header #siteAvatar {
+    bottom: 1px;
 }
 
 #header #siteText {
@@ -281,14 +290,14 @@ html, body {
     display: block;
     position: fixed;
     z-index: 9999;
-    top: 28px;
+    top: 24px;
     right: 50px
 }
 
 #nprogress .spinner::before {
     position: fixed;
     z-index: 9999;
-    top: 33px;
+    top: 28px;
     right: 100px;
     content: "FETCHING...";
     font-family: "Fira Sans Condensed", monospace;

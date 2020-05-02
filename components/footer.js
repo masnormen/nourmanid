@@ -11,10 +11,10 @@ const Footer = () => {
 			<Section
 				centeredRight
 				centeredLeft
-				height="medium"
+				height={{min: "small"}}
 				background={{
 					color: "accent-4",
-					position: "center bottom",
+					position: "center center",
 					repeat: "no-repeat",
 					size: "cover",
 					image: "url(/assets/grassback.png)"
@@ -40,11 +40,9 @@ const Footer = () => {
 								</Anchor>
 							</Link>
 							&nbsp;/&nbsp;
-							<Link passHref href="/contact">
-								<Anchor color="white">
-									<Emoji symbol="📞" label="contact"/>contact
-								</Anchor>
-							</Link>
+							<Anchor href="/#contact" color="white">
+								<Emoji symbol="📞" label="contact"/>contact
+							</Anchor>
 						</Text>
 					</Box>
 				</>}
