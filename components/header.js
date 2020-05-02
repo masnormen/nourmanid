@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Header = (props) => {
 	let location = useRouter().pathname;
-	let hide = location === "/" || location === "/404";
+	let hide = location === "/";
 	
 	if (hide && !props.forceShow) return null;
 	
@@ -64,9 +64,9 @@ const Header = (props) => {
 							style={{textAlign: "center"}} alignSelf="center"
 							pad={{vertical: "xxsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
 						>
-							<Link passHref href="/blog">
+							<Link passHref href="/post">
 								<Anchor alignSelf="center" size="small">
-									<Emoji symbol="📝" label="blog"/> Blog
+									<Emoji symbol="📝" label="posts"/> Posts
 								</Anchor>
 							</Link>
 						</Box>

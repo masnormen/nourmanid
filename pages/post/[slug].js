@@ -44,7 +44,7 @@ const BlogPost = ({postData}) => {
 						round="small"
 						margin={{vertical: "medium"}}
 					>
-						<Link passHref href="/blog">
+						<Link passHref href="/post">
 							<Anchor alignSelf="center">
 								&larr; I want to read more post <Emoji symbol="📝" label="blog"/>
 							</Anchor>
@@ -56,7 +56,7 @@ const BlogPost = ({postData}) => {
 						textAlign="center" style={{width: "100%", maxWidth: "850px", overflowWrap: "break-word"}}
 						alignSelf="center" level="1" margin={{top: "medium"}}
 					>
-						<Link passHref href="/blog/[slug]" as={`/blog/${postData.slug}`}>
+						<Link passHref href="/post/[slug]" as={`/post/${postData.slug}`}>
 							<Anchor>
 								{postData.title}
 							</Anchor>
@@ -96,19 +96,19 @@ const BlogPost = ({postData}) => {
 						gap="small"
 					>
 						<Text margin={{top: "xxsmall"}} weight="bold">SHARE THIS!</Text>
-						<FacebookShareButton url={`https://nourman.id/blog/${postData.slug}`}>
+						<FacebookShareButton url={`https://nourman.id/post/${postData.slug}`}>
 							<Facebook size="medium" color="black"/>
 						</FacebookShareButton>
 						<TwitterShareButton
-							url={`https://nourman.id/blog/${postData.slug}`}
+							url={`https://nourman.id/post/${postData.slug}`}
 							title={postData.title}
 						>
 							<Twitter size="medium" color="black"/>
 						</TwitterShareButton>
-						<LinkedinShareButton url={`https://nourman.id/blog/${postData.slug}`}>
+						<LinkedinShareButton url={`https://nourman.id/post/${postData.slug}`}>
 							<Linkedin size="medium" color="black"/>
 						</LinkedinShareButton>
-						<WhatsappShareButton url={`https://nourman.id/blog/${postData.slug}`}>
+						<WhatsappShareButton url={`https://nourman.id/post/${postData.slug}`}>
 							<WhatsappIcon size="30px" round/>
 						</WhatsappShareButton>
 					</Box>

@@ -73,7 +73,9 @@ html, body {
     max-width: 100%;
     margin-right: auto !important;
     margin-left: auto !important;
+    border: 3px solid #F9E784;
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .markdown > p:first-of-type::first-letter {

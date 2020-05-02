@@ -12,7 +12,7 @@ const Section = (props) => {
 			align="center"
 			alignContent="center"
 			justify="center"
-			pad={props.blogPost ? "medium" : props.isHeader ? "xsmall" : "xlarge"}
+			pad={props.blogPost ? "medium" : props.isHeader ? "xxsmall" : "xlarge"}
 			border={props.border ? {
 				side: "bottom",
 				size: "medium",

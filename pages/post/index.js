@@ -23,7 +23,7 @@ const BlogHome = ({postData}) => {
 	return (
 		<>
 			<Head>
-				<title>Blog | Nourman Hajar</title>
+				<title>Posts · Nourman Hajar</title>
 			</Head>
 			
 			<Section
@@ -44,7 +44,7 @@ const BlogHome = ({postData}) => {
 						{postData[0].category}
 					</Text>
 					<Heading level="2" size="medium" margin={{top: "none", bottom: "small"}}>
-						<Link passHref href="/blog/[slug]" as={`/blog/${postData[0].slug}`}>
+						<Link passHref href="/post/[slug]" as={`/post/${postData[0].slug}`}>
 							<Anchor>{postData[0].title}</Anchor>
 						</Link>
 					</Heading>
@@ -53,7 +53,7 @@ const BlogHome = ({postData}) => {
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
 						<b>
-							<Link passHref href="/blog/[slug]" as={`/blog/${postData[0].slug}`}>
+							<Link passHref href="/post/[slug]" as={`/post/${postData[0].slug}`}>
 								<Anchor><Emoji symbol="👉" label="this"/> Read More...</Anchor>
 							</Link>
 						</b>
@@ -71,7 +71,7 @@ const BlogHome = ({postData}) => {
 						{postData[1].category}
 					</Text>
 					<Heading level="2" size="medium" margin={{top: "none", bottom: "small"}}>
-						<Link passHref href="/blog/[slug]" as={`/blog/${postData[1].slug}`}>
+						<Link passHref href="/post/[slug]" as={`/post/${postData[1].slug}`}>
 							<Anchor>{postData[1].title}</Anchor>
 						</Link>
 					</Heading>
@@ -80,7 +80,7 @@ const BlogHome = ({postData}) => {
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
 						<b>
-							<Link passHref href="/blog/[slug]" as={`/blog/${postData[1].slug}`}>
+							<Link passHref href="/post/[slug]" as={`/post/${postData[1].slug}`}>
 								<Anchor><Emoji symbol="👉" label="this"/> Read More...</Anchor>
 							</Link>
 						</b>
@@ -108,7 +108,7 @@ const BlogHome = ({postData}) => {
 									{item.category}
 								</Text>
 								<Heading level="2" size="small" margin={{vertical: "xsmall"}}>
-									<Link passHref href="/blog/[slug]" as={`/blog/${item.slug}`}>
+									<Link passHref href="/post/[slug]" as={`/post/${item.slug}`}>
 										<Anchor>{item.title}</Anchor>
 									</Link>
 								</Heading>
@@ -127,7 +127,7 @@ const BlogHome = ({postData}) => {
 						{postData.slice(4).map((item) =>
 							<>
 								<Heading level="2" size="small" margin={{vertical: "xsmall"}}>
-									<Link passHref href="/blog/[slug]" as={`/blog/${item.slug}`}>
+									<Link passHref href="/post/[slug]" as={`/post/${item.slug}`}>
 										<Anchor>{item.title}</Anchor>
 									</Link>
 									<Text

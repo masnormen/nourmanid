@@ -75,11 +75,11 @@ const Index = ({postData}) => {
 					left={<>
 						<Box alignSelf="center" justify="start" align="start" fill="vertical">
 							<Heading level="2" size="medium" margin={{vertical: "xsmall"}}>
-								Feel free to check out these fresh posts from&nbsp;
-								<Link passHref href="/blog">
-									<Anchor>my blog!</Anchor>
+								Feel free to check out these fresh articles from&nbsp;
+								<Link passHref href="/post">
+									<Anchor>my posts!</Anchor>
 								</Link>
-								<Emoji symbol="📝" label="blog"/>
+								<Emoji symbol="📝" label="posts"/>
 							</Heading>
 						</Box>
 					</>}
@@ -87,7 +87,7 @@ const Index = ({postData}) => {
 						<Box alignSelf="center" justify="start" align="start" fill="vertical">
 							{postData.map((item, index) =>
 								<Heading key={index} level="2" size="small" margin={{vertical: "xsmall"}}>
-									<Link passHref href="/blog/[slug]" as={`/blog/${item.slug}`}>
+									<Link passHref href="/post/[slug]" as={`/post/${item.slug}`}>
 										<Anchor>
 											{item.title}
 										</Anchor>
@@ -100,7 +100,7 @@ const Index = ({postData}) => {
 									</Text>
 								</Heading>
 							)}
-							<Link passHref href="/blog">
+							<Link passHref href="/post">
 								<Anchor margin={{top: "medium"}}>
 									<Emoji symbol="👉" label="this"/> and more!
 								</Anchor>

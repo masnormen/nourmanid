@@ -6,8 +6,6 @@ import Emoji from "../components/emoji";
 import Link from "next/link";
 
 const Footer = () => {
-	// let location = useLocation();
-	// if (location.pathname !== "/404")
 	return (
 		<>
 			<Section
@@ -30,9 +28,9 @@ const Footer = () => {
 								</Anchor>
 							</Link>
 							&nbsp;/&nbsp;
-							<Link passHref href="/blog">
+							<Link passHref href="/post">
 								<Anchor color="white">
-									<Emoji symbol="📝" label="blog"/>blog
+									<Emoji symbol="📝" label="posts"/>posts
 								</Anchor>
 							</Link>
 							&nbsp;/&nbsp;
