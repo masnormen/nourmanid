@@ -1,5 +1,5 @@
 {
-	"trailingSlash": "false",
+	"trailingSlash": false,
 	"routes": [{
 		"headers": {
 			"Access-Control-Allow-Origin": "*",
