@@ -48,7 +48,7 @@ const BlogHome = ({postData}) => {
 							<Anchor>{postData[0].title}</Anchor>
 						</Link>
 					</Heading>
-					<Paragraph margin={{vertical: "xsmall"}} className="postDesc">
+					<Paragraph className="postDesc" margin={{vertical: "xsmall"}} className="postDesc">
 						<Markdown>{postData[0].body}</Markdown>
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
@@ -75,7 +75,7 @@ const BlogHome = ({postData}) => {
 							<Anchor>{postData[1].title}</Anchor>
 						</Link>
 					</Heading>
-					<Paragraph margin={{vertical: "xsmall"}} className="postDesc">
+					<Paragraph className="postDesc" margin={{vertical: "xsmall"}}>
 						<Markdown>{postData[1].body}</Markdown>
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
@@ -102,19 +102,19 @@ const BlogHome = ({postData}) => {
 				border="dark-2"
 				left={<>
 					<Box alignSelf="center" justify="start" align="start" fill="vertical">
-						{postData.slice(2, 4).map((item) =>
+						{postData.slice(2, 4).map((item, index) =>
 							<>
 								<Text size="medium" margin={{top: "medium", bottom: "none"}} className="serif">
 									{item.category}
 								</Text>
-								<Heading level="2" size="small" margin={{vertical: "xsmall"}}>
+								<Heading level="2" size="small" margin={{vertical: "small"}}>
 									<Link passHref href="/post/[slug]" as={`/post/${item.slug}`}>
 										<Anchor>{item.title}</Anchor>
 									</Link>
 								</Heading>
-								<Paragraph className="postDesc" margin={{vertical: "none"}}>
+								<Markdown key={index} className="postDesc" margin={{vertical: "none"}}>
 									{item.body}
-								</Paragraph>
+								</Markdown>
 							</>
 						)}
 					</Box>

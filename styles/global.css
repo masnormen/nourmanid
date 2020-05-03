@@ -49,11 +49,17 @@ html, body {
     font-size: 0.9em;
 }
 
-.postDesc {
+.postDesc > * {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 6;
     overflow: hidden;
+    text-align: justify;
+    margin-top: 0px!important;
+}
+
+.postDesc p:not(:first-of-type) {
+    display: none;
 }
 
 .markdown {

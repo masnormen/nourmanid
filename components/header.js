@@ -40,7 +40,7 @@ const Header = (props) => {
 								draggable="false"
 							/>
 						</Box>
-						<Box height="70px" margin={{horizontal: "medium", vertical: "none"}} justify="center">
+						<Box height="70px" margin={{horizontal: "medium", vertical: "none"}} justify="center" className="hideOnMobile">
 							<Text
 								textAlign="center" color="accent-3" size="35px" style={{textTransform: "lowercase"}}
 								id="siteText" className="serif" alignSelf="center"
@@ -49,9 +49,9 @@ const Header = (props) => {
 							</Text>
 						</Box>
 						<Box
-							background="accent-2" margin={{horizontal: "small", top: "xsmall"}} round="small"
+							background="accent-2" margin={{horizontal: "small", top: "small", bottom: "xsmall"}} round="small"
 							style={{textAlign: "center"}} alignSelf="center"
-							pad={{vertical: "xxsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
+							pad={{vertical: "xxsmall", horizontal: "small"}} weight="bold"
 						>
 							<Link passHref href="/">
 								<Anchor alignSelf="center" size="small">
@@ -60,9 +60,9 @@ const Header = (props) => {
 							</Link>
 						</Box>
 						<Box
-							background="accent-4" margin={{horizontal: "small", top: "xsmall"}} round="small"
+							background="accent-4" margin={{horizontal: "small", top: "small", bottom: "xsmall"}} round="small"
 							style={{textAlign: "center"}} alignSelf="center"
-							pad={{vertical: "xxsmall", horizontal: "small"}} className="hideOnMobile" weight="bold"
+							pad={{vertical: "xxsmall", horizontal: "small"}} weight="bold"
 						>
 							<Link passHref href="/post">
 								<Anchor alignSelf="center" size="small">

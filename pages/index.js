@@ -69,7 +69,7 @@ const Index = ({postData}) => {
 				</>}
 			/>
 			<div style={{position: "relative"}}>
-				<Header className="hideOnMobile" forceShow/>
+				<Header forceShow/>
 				<Section
 					background="accent-5"
 					border="dark-2"
