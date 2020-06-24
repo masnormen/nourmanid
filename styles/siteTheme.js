@@ -1,13 +1,16 @@
 export const siteTheme = {
 	"heading": {
 		"font": {
-			"family": "\"DM Serif Display\",Consolas, \"Andale Mono WT\", \"Andale Mono\", \"Lucida Console\", \"Lucida Sans Typewriter\", \"DejaVu Sans Mono\", \"Bitstream Vera Sans Mono\", \"Liberation Mono\", \"Nimbus Mono L\", Monaco, \"Courier New\", Courier, monospace"
+			"family": "\"DM Serif Display\",Consolas, \"Andale Mono WT\", \"Andale Mono\", \"Lucida Console\", \"Lucida Sans Typewriter\", \"DejaVu Sans Mono\", \"Bitstream Vera Sans Mono\", \"Liberation Mono\", \"Nimbus Mono L\", Monaco, \"Courier New\", Courier, monospace",
+			"height": "1.5em"
+		
 		},
 		"weight": 400
 	},
 	"global": {
 		"font": {
-			"family": "'Fira Sans Condensed', sans-serif",
+			"family": "'Barlow Semi Condensed', sans-serif",
+			"height": "1.5em",
 			"weight": 400
 		},
 		"colors": {

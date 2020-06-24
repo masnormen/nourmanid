@@ -55,7 +55,7 @@ html, body {
     -webkit-line-clamp: 6;
     overflow: hidden;
     text-align: justify;
-    margin-top: 0px!important;
+    margin-top: 0!important;
 }
 
 .postDesc p:not(:first-of-type) {
@@ -73,6 +73,8 @@ html, body {
     margin-left: 10px;
     text-align: justify;
     box-sizing: border-box;
+    font-size: 1.2em;
+    line-height: 1.5em;
 }
 
 .markdown img {
@@ -87,8 +89,8 @@ html, body {
 .markdown > p:first-of-type::first-letter {
     font-family: "DM Serif Display", "Fira Code", monospace;
     float: left;
-    font-size: 3em;
-    line-height: 40px;
+    font-size: 3.6em;
+    line-height: 60px;
     padding-top: 4px;
     padding-right: 5px;
     padding-left: 3px;
@@ -130,7 +132,8 @@ html, body {
 
 .markdown pre code {
     font-family: "Nanum Gothic Coding", "Fira Code", monospace;
-    font-size: 0.8em;
+    font-size: 0.8em!important;
+    line-height: 1em!important;
 }
 
 .serif {
@@ -153,7 +156,7 @@ html, body {
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: 0 10px 20px 16px rgba(229, 233, 198, 0.7);
+    box-shadow: 0 10px 17px 11px rgba(52, 53, 44, 0.18);
 }
 
 #siteTitle {
@@ -183,16 +186,16 @@ html, body {
 
 
 #header #siteAvatarBackground {
-    filter: grayscale(100%) invert(100%) brightness(60%) contrast(70%);
+    filter: grayscale(100%) invert(100%) brightness(140%) contrast(40%);
 }
 
 #header #siteAvatar {
-    bottom: 1px;
+    bottom: 0px;
 }
 
 #header #siteText {
     line-height: 1.1em;
-    -webkit-text-stroke: 1px #222222;
+    -webkit-text-stroke: 1px rgba(0,0,0,0);
 }
 
 #siteAvatarShadow {
@@ -306,10 +309,10 @@ html, body {
     top: 28px;
     right: 100px;
     content: "FETCHING...";
-    font-family: "Fira Sans Condensed", monospace;
+    font-family: "Barlow Semi Condensed", monospace;
     font-weight: bold;
     font-size: 1.2em;
-    color:  #c66060;
+    color: #d69898;
 }
 
 #nprogress .spinner-icon {
@@ -317,7 +320,7 @@ html, body {
     height: 30px;
     box-sizing: border-box;
     background-color: transparent;
-    border: 5px solid #c66060;
+    border: 5px solid #d69898;
     border-right-color: #F2F6D0;
     border-bottom-color: #F2F6D0;
     border-radius: 50%;

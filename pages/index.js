@@ -26,10 +26,14 @@ const Index = ({postData}) => {
 		<>
 			<Head>
 				<title>Nourman Hajar</title>
+				<meta
+					name="description"
+					content="A Front-End Engineer, Linux Hobbyist, JAMstack admirer, and CS Student. Loves to share	experience and writes tutorials."
+				/>
 			</Head>
 			<Section
-				background="accent-4"
-				border="accent-1"
+				background="accent-5"
+				border="light-4"
 				fill fullPage
 				reversed
 				left={<>
@@ -43,6 +47,9 @@ const Index = ({postData}) => {
 					<Paragraph margin={{vertical: "xsmall"}}>
 						I have a love for coding. And I have a belief that the future of humanity will be built upon
 						lines of <Text weight="bold">&lt;/code&gt;</Text>.
+					</Paragraph>
+					<Paragraph margin={{vertical: "xsmall"}}>
+						Oh, and don&apos;t forget to scroll down &darr;
 					</Paragraph>
 				</>}
 				right={<>

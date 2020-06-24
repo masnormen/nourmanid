@@ -33,7 +33,7 @@ if (typeof window !== "undefined") {
 	WebFont.load({
 		google: {
 			families: [
-				"Fira Sans Condensed:300",
+				"Barlow Semi Condensed:300",
 				"DM Serif Display",
 				"Nanum Gothic Coding&display=swap",
 			]
@@ -48,6 +48,7 @@ const App = ({Component, pageProps}) => {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<meta httpEquiv="X-UA-Compatible" content="IE=EDGE"/>
+				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png"/>
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
@@ -57,6 +58,7 @@ const App = ({Component, pageProps}) => {
 				<meta name="application-name" content="Nourman Hajar"/>
 				<meta name="msapplication-TileColor" content="#ffc40d"/>
 				<meta name="theme-color" content="#061329"/>
+				
 			</Head>
 			<Grommet theme={normenTheme} id="grommetParent" full>
 				<Header/>

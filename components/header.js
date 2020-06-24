@@ -17,8 +17,7 @@ const Header = (props) => {
 			<Section
 				isHeader
 				id="header"
-				background="accent-5"
-				border="accent-4"
+				background="dark-2"
 				className={props.className}
 				title={<>
 					<Box direction="row" justify="center" align="center" width="100%">
@@ -49,23 +48,23 @@ const Header = (props) => {
 							</Text>
 						</Box>
 						<Box
-							background="accent-2" margin={{horizontal: "small", top: "small", bottom: "xsmall"}} round="small"
+							background="accent-2" margin={{horizontal: "small", top: "xsmall", bottom: "xsmall"}} round="small"
 							style={{textAlign: "center"}} alignSelf="center"
 							pad={{vertical: "xxsmall", horizontal: "small"}} weight="bold"
 						>
 							<Link passHref href="/">
-								<Anchor alignSelf="center" size="small">
+								<Anchor alignSelf="center" size="medium">
 									<Emoji symbol="🏠" label="home"/> Home
 								</Anchor>
 							</Link>
 						</Box>
 						<Box
-							background="accent-4" margin={{horizontal: "small", top: "small", bottom: "xsmall"}} round="small"
+							background="accent-4" margin={{horizontal: "small", top: "xsmall", bottom: "xsmall"}} round="small"
 							style={{textAlign: "center"}} alignSelf="center"
 							pad={{vertical: "xxsmall", horizontal: "small"}} weight="bold"
 						>
 							<Link passHref href="/post">
-								<Anchor alignSelf="center" size="small">
+								<Anchor alignSelf="center" size="medium">
 									<Emoji symbol="📝" label="posts"/> Posts
 								</Anchor>
 							</Link>

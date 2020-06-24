@@ -24,10 +24,14 @@ const BlogHome = ({postData}) => {
 		<>
 			<Head>
 				<title>Posts · Nourman Hajar</title>
+				<meta
+					name="description"
+					content="Posts written by Nourman Hajar. You can find articles about tutorials and my life experience."
+				/>
 			</Head>
 			
 			<Section
-				background="accent-5"
+				background="light-5"
 				border="dark-2"
 				centeredLeft
 				left={<>
@@ -48,7 +52,7 @@ const BlogHome = ({postData}) => {
 							<Anchor>{postData[0].title}</Anchor>
 						</Link>
 					</Heading>
-					<Paragraph className="postDesc" margin={{vertical: "xsmall"}} className="postDesc">
+					<Paragraph className="postDesc" margin={{vertical: "xsmall"}}>
 						<Markdown>{postData[0].body}</Markdown>
 					</Paragraph>
 					<Paragraph margin={{vertical: "xsmall"}}>
@@ -62,7 +66,7 @@ const BlogHome = ({postData}) => {
 			/>
 			
 			<Section
-				background="accent-2"
+				background="accent-4"
 				border="dark-2"
 				centeredRight
 				reversed
@@ -98,7 +102,7 @@ const BlogHome = ({postData}) => {
 			/>
 			
 			<Section
-				background="accent-5"
+				background="light-5"
 				border="dark-2"
 				left={<>
 					<Box alignSelf="center" justify="start" align="start" fill="vertical">

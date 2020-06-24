@@ -54,7 +54,12 @@ const Footer = () => {
 								target="_blank" href="https://nextjs.org/"
 								label="Next.js"
 							/>
-							&nbsp;and <Emoji symbol="❤️" label="heart"/>
+							,&nbsp;
+							<Anchor
+								target="_blank" href="https://vercel.com/"
+								label="Vercel"
+							/>
+							, and <Emoji symbol="❤️" label="heart"/>
 						</Text>
 					</Box>
 				</>}
