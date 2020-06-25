@@ -18,12 +18,20 @@ const normenTheme = deepMerge(grommet, siteTheme);
 Router.events.on("routeChangeStart", () => {
 	NProgress.start();
 });
-Router.events.on("routeChangeComplete", () => {
-	if (typeof document !== "undefined") document.getElementById("grommetParent").scrollTo({
-		top: 0,
-		left: 0,
-		behavior: "smooth"
-	});
+Router.events.on("routeChangeComplete", (url) => {
+	if (typeof document !== "undefined") {
+		document.getElementById("grommetParent").scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "smooth"
+		});
+		setTimeout(() => {
+			window.gtag("config", process.env.GA_TRACKING_ID, {
+				page_location: url,
+				page_title: document.title,
+			});
+		}, 0);
+	}
 	NProgress.done();
 });
 Router.events.on("routeChangeError", () => NProgress.done());
@@ -48,7 +56,7 @@ const App = ({Component, pageProps}) => {
 			<Head>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<meta httpEquiv="X-UA-Compatible" content="IE=EDGE"/>
-				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+				<meta httpEquiv="Content-Type" content="text/html; charset=utf-8"/>
 				<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png"/>
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
 				<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
@@ -58,7 +66,15 @@ const App = ({Component, pageProps}) => {
 				<meta name="application-name" content="Nourman Hajar"/>
 				<meta name="msapplication-TileColor" content="#ffc40d"/>
 				<meta name="theme-color" content="#061329"/>
-				
+				<script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=UA-38735593-3"
+				/>
+				<script
+					dangerouslySetInnerHTML={{__html: `
+						window.dataLayer = window.dataLayer || []; function gtag(){ dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-38735593-3');
+					`,}}
+				/>
 			</Head>
 			<Grommet theme={normenTheme} id="grommetParent" full>
 				<Header/>
