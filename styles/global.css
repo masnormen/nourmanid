@@ -7,7 +7,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /*cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAEZJREFUeAGt0EEKgDAUA1En9z+0qEENhA+FvlUZQqE9Bnynlmlr2iVkSY66AHrg+MddSUiU6VuxqMhYquzcCvO6PZjhx5oTQ+8Bs3EshqIAAAAASUVORK5CYII=), auto;*/
+    cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAEZJREFUeAGt0EEKgDAUA1En9z+0qEENhA+FvlUZQqE9Bnynlmlr2iVkSY66AHrg+MddSUiU6VuxqMhYquzcCvO6PZjhx5oTQ+8Bs3EshqIAAAAASUVORK5CYII=), auto;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -156,7 +156,7 @@ html, body {
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: 0 10px 17px 11px rgba(52, 53, 44, 0.18);
+    box-shadow: 0 2px 20px 5px rgba(52, 53, 44, 0.18);
 }
 
 #siteTitle {
@@ -167,11 +167,11 @@ html, body {
 #siteAvatar {
     position: absolute;
     bottom: 2px;
-    filter: brightness(85%) contrast(140%) invert(15%) sepia(10%) saturate(50%);
+    filter: brightness(75%) contrast(130%) invert(5%) sepia(10%) saturate(60%);
 }
 
 #siteAvatarBackground {
-    filter: grayscale(60%) invert(5%) sepia(20%);
+    filter: grayscale(60%) invert(5%) sepia(20%) contrast(60%);
 }
 
 #siteAvatarText {
@@ -181,7 +181,7 @@ html, body {
     margin-right: -50%;
     transform: translate(-50%, -50%);
     line-height: 1.1em;
-    -webkit-text-stroke: 1px #222222;
+    text-shadow: 2px 2px #555555;
 }
 
 

@@ -31,8 +31,8 @@ const BlogHome = ({postData}) => {
 			</Head>
 			
 			<Section
-				background="light-5"
-				border="dark-2"
+				background="light-3"
+				border="light-4"
 				centeredLeft
 				left={<>
 					<Image
@@ -66,8 +66,8 @@ const BlogHome = ({postData}) => {
 			/>
 			
 			<Section
-				background="accent-4"
-				border="dark-2"
+				background="light-3"
+				border="dark-3"
 				centeredRight
 				reversed
 				left={<>
@@ -102,8 +102,8 @@ const BlogHome = ({postData}) => {
 			/>
 			
 			<Section
-				background="light-5"
-				border="dark-2"
+				background="accent-4"
+				border="dark-3"
 				left={<>
 					<Box alignSelf="center" justify="start" align="start" fill="vertical">
 						{postData.slice(2, 4).map((item, index) =>

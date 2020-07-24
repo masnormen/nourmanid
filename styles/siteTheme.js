@@ -3,7 +3,6 @@ export const siteTheme = {
 		"font": {
 			"family": "\"DM Serif Display\",Consolas, \"Andale Mono WT\", \"Andale Mono\", \"Lucida Console\", \"Lucida Sans Typewriter\", \"DejaVu Sans Mono\", \"Bitstream Vera Sans Mono\", \"Liberation Mono\", \"Nimbus Mono L\", Monaco, \"Courier New\", Courier, monospace",
 			"height": "1.5em"
-		
 		},
 		"weight": 400
 	},
@@ -11,7 +10,7 @@ export const siteTheme = {
 		"font": {
 			"family": "'Barlow Semi Condensed', sans-serif",
 			"height": "1.5em",
-			"weight": 400
+			"weight": 600
 		},
 		"colors": {
 			"icon": {
@@ -31,7 +30,7 @@ export const siteTheme = {
 				"dark": "rgba(255,255,255,0.33)",
 				"light": "rgba(0,0,0,0.33)"
 			},
-			"brand": "#c66060",
+			"brand": "#d2836b",
 			"control": {
 				"dark": "brand",
 				"light": "brand"
@@ -44,11 +43,11 @@ export const siteTheme = {
 				"light": "#061329"
 			},
 			"white": "#FFFFFF",
-			"accent-1": "#CB8589",
+			"accent-1": "#cb9b85",
 			"accent-2": "#d6e2c3",
-			"accent-3": "#eed23a",
-			"accent-4": "#f5e0c2",
-			"accent-5":"#F2F6D0",
+			"accent-3": "#e0bc39",
+			"accent-4": "#f5d0c2",
+			"accent-5":"#493548",
 			"dark-1": "#333333",
 			"dark-2": "#555555",
 			"dark-3": "#777777",

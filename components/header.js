@@ -17,7 +17,7 @@ const Header = (props) => {
 			<Section
 				isHeader
 				id="header"
-				background="dark-2"
+				background="light-3"
 				className={props.className}
 				title={<>
 					<Box direction="row" justify="center" align="center" width="100%">
@@ -41,7 +41,7 @@ const Header = (props) => {
 						</Box>
 						<Box height="70px" margin={{horizontal: "medium", vertical: "none"}} justify="center" className="hideOnMobile">
 							<Text
-								textAlign="center" color="accent-3" size="35px" style={{textTransform: "lowercase"}}
+								textAlign="center" color="accent-3" size="32px" style={{textTransform: "lowercase"}}
 								id="siteText" className="serif" alignSelf="center"
 							>
 								Nourman Hajar

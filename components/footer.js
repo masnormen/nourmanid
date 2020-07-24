@@ -13,7 +13,7 @@ const Footer = () => {
 				centeredLeft
 				height={{min: "small"}}
 				background={{
-					color: "accent-4",
+					color: "light-3",
 					position: "center center",
 					repeat: "no-repeat",
 					size: "cover",
@@ -47,7 +47,7 @@ const Footer = () => {
 					</Box>
 				</>}
 				right={<>
-					<Box background="white" round="small" pad={{vertical: "xsmall", horizontal: "small"}}>
+					<Box background="accent-2" round="small" pad={{vertical: "xsmall", horizontal: "small"}}>
 						<Text textAlign="center" size="small" weight="bold">
 							© 2020. Built with&nbsp;
 							<Anchor

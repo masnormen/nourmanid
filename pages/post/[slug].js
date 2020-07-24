@@ -30,13 +30,13 @@ const BlogPost = ({postData}) => {
 					dangerouslySetInnerHTML={{__html: "if (document.querySelector('pre code')) document.addEventListener('DOMContentLoaded', (event) => Prism.highlightAll();)"}}/>
 			</Head>
 			<Section
-				background="accent-5"
+				background="light-3"
 				border="dark-2"
 				blogPost
 				title={<>
 					{/*Go Back to Index Button*/}
 					<Box
-						background="accent-4"
+						background="accent-3"
 						pad={{
 							vertical: "small",
 							horizontal: "medium"
@@ -45,7 +45,7 @@ const BlogPost = ({postData}) => {
 						margin={{vertical: "medium"}}
 					>
 						<Link passHref href="/post">
-							<Anchor alignSelf="center">
+							<Anchor alignSelf="center" color="black">
 								&larr; I want to read more post <Emoji symbol="📝" label="blog"/>
 							</Anchor>
 						</Link>
