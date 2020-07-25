@@ -51,12 +51,12 @@ const Footer = () => {
 						<Text textAlign="center" size="small" weight="bold">
 							© 2020. Built with&nbsp;
 							<Anchor
-								target="_blank" href="https://nextjs.org/"
+								target="_blank" rel="noopener" href="https://nextjs.org/"
 								label="Next.js"
 							/>
 							,&nbsp;
 							<Anchor
-								target="_blank" href="https://vercel.com/"
+								target="_blank" rel="noopener" href="https://vercel.com/"
 								label="Vercel"
 							/>
 							, and <Emoji symbol="❤️" label="heart"/>
