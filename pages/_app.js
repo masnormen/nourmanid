@@ -7,7 +7,7 @@ import '../styles/notion.css';
 import '../styles/prism.css';
 // import Scrollbar from 'smooth-scrollbar';
 
-import Footer from '../components/Footer';
+import Footer from '../lib/Footer';
 import Navbar from '../components/Navbar';
 
 // if (typeof window !== 'undefined') {
