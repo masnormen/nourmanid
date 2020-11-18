@@ -1,72 +1,41 @@
-import React from "react";
-import {Anchor, Box, Text} from "grommet";
-
-import Section from "../components/section";
-import Emoji from "../components/emoji";
-import Link from "next/link";
+/* eslint-disable react/jsx-one-expression-per-line */
+import Hyperlink from './Hyperlink';
 
 const Footer = () => {
-	return (
-		<>
-			<Section
-				centeredRight
-				centeredLeft
-				height={{min: "small"}}
-				background={{
-					color: "light-3",
-					position: "center center",
-					repeat: "no-repeat",
-					size: "cover",
-					image: "url(/assets/grassback.png)"
-				}}
-				left={<>
-					<Box background="black" round="small" pad={{vertical: "xsmall", horizontal: "small"}}>
-						<Text textAlign="center" size="small" weight="bold">
-							<Link passHref href="/">
-								<Anchor color="white">
-									<Emoji symbol="🏠" label="home"/>home
-								</Anchor>
-							</Link>
-							&nbsp;/&nbsp;
-							<Link passHref href="/post">
-								<Anchor color="white">
-									<Emoji symbol="📝" label="posts"/>posts
-								</Anchor>
-							</Link>
-							&nbsp;/&nbsp;
-							<Link passHref href="/works">
-								<Anchor color="white">
-									<Emoji symbol="💻" label="works"/>works
-								</Anchor>
-							</Link>
-							&nbsp;/&nbsp;
-							<Anchor href="/#contact" color="white">
-								<Emoji symbol="📞" label="contact"/>contact
-							</Anchor>
-						</Text>
-					</Box>
-				</>}
-				right={<>
-					<Box background="accent-2" round="small" pad={{vertical: "xsmall", horizontal: "small"}}>
-						<Text textAlign="center" size="small" weight="bold">
-							© 2020. Built with&nbsp;
-							<Anchor
-								target="_blank" rel="noopener" href="https://nextjs.org/"
-								label="Next.js"
-							/>
-							,&nbsp;
-							<Anchor
-								target="_blank" rel="noopener" href="https://vercel.com/"
-								label="Vercel"
-							/>
-							, and <Emoji symbol="❤️" label="heart"/>
-						</Text>
-					</Box>
-				</>}
-			/>
-		</>
-	);
-	// else return null;
+  const date = new Date();
+  return (
+    <footer
+      id="footer"
+      className="relative flex flex-col content-center justify-center flex-grow overflow-y-hidden bg-sunflower pattern-circuitry py-20 px-12"
+    >
+      <div className="text-center text-gray-700">
+        <h1 className="mb-3 text-xl font-semibold leading-tight tracking-tighter">
+          Have a nice
+          {' '}
+          {date.toLocaleString('en', { weekday: 'long' })}
+          {' '}
+          😉
+        </h1>
+        <p className="tracking-tight">
+          <span className="font-semibold">&copy; 2020 Nourman Hajar</span>
+          {'  '}—{'  '}Powered by{' '}
+          <Hyperlink target="_blank" rel="nofollow" href="https://vercel.com/">Vercel</Hyperlink>
+          {' '}and{' '}
+          <Hyperlink target="_blank" rel="nofollow" href="https://notion.so/">Notion</Hyperlink>
+        </p>
+        <p className="tracking-tight">
+          Patterns and icons by{' '}
+          <Hyperlink target="_blank" rel="nofollow" href="https://www.heropatterns.com/">
+            Hero Patterns
+          </Hyperlink>
+          {' '}and{' '}
+          <Hyperlink target="_blank" rel="nofollow" href="https://heroicons.dev/">
+            Heroicons
+          </Hyperlink>
+        </p>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
