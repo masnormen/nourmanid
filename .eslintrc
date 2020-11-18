@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  },
+  "parserOptions":
+  {
+    "ecmaVersion": 2020
+  },
+  "extends": "airbnb",
+  "rules": {
+    "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
+    "react/prop-types": 1,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-unescaped-entities": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "spaced-comment": 0
+  }
+}
