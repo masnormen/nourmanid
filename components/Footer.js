@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import Hyperlink from '../components/Hyperlink';
+import Hyperlink from './Hyperlink';
 
 const Footer = () => {
   const date = new Date();
