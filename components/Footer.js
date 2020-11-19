@@ -24,13 +24,9 @@ const Footer = () => {
           <Hyperlink target="_blank" rel="nofollow" href="https://notion.so/">Notion</Hyperlink>
         </p>
         <p className="tracking-tight">
-          Patterns and icons by{' '}
+          Patterns by{' '}
           <Hyperlink target="_blank" rel="nofollow" href="https://www.heropatterns.com/">
             Hero Patterns
-          </Hyperlink>
-          {' '}and{' '}
-          <Hyperlink target="_blank" rel="nofollow" href="https://heroicons.dev/">
-            Heroicons
           </Hyperlink>
         </p>
       </div>

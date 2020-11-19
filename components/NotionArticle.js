@@ -1,6 +1,7 @@
 import { NotionRenderer } from 'react-notion-x';
 import { getBlockTitle, getBlockIcon } from 'notion-utils';
 import Head from 'next/head';
+import Link from 'next/link';
 import Hyperlink from './Hyperlink';
 
 const NotionArticle = ({ article, isWork = false }) => (
@@ -83,7 +84,7 @@ const NotionArticle = ({ article, isWork = false }) => (
             </p>
           </header>
           <section
-            className="mt-12 bg-quitewhite p-8 md:p-16 rounded-3xl tracking-tight"
+            className="mt-12 bg-quitewhite p-8 border border-coffeestain md:p-16 rounded-3xl tracking-tight"
           >
             <NotionRenderer
               recordMap={article.recordMap}
@@ -97,31 +98,33 @@ const NotionArticle = ({ article, isWork = false }) => (
                   const title = getBlockTitle(link?.children?.props?.block, article.recordMap) || 'error';
                   const icon = getBlockIcon(link?.children?.props?.block, article.recordMap) || '📝';
                   return (
-                    <a href={`/articles${link.href}`} className={link.className}>
-                      <span className="notion-page-title">
-                        {icon.startsWith('http') ? (
-                          <img
-                            src={`https://ssfy.io/${encodeURIComponent(`https://www.notion.so/image/${encodeURIComponent(icon)}?table=block&id=${link.children.props.block.id}&cache=v2`)}`}
-                            className="notion-page-title-icon notion-page-icon"
-                            alt="title"
-                            loading="lazy"
-                          />
-                        ) : (
+                    <Link href={`/articles${link.href}`}>
+                      <a className={link.className}>
+                        <span className="notion-page-title">
+                          {icon.startsWith('http') ? (
+                            <img
+                              src={`https://ssfy.io/${encodeURIComponent(`https://www.notion.so/image/${encodeURIComponent(icon)}?table=block&id=${link.children.props.block.id}&cache=v2`)}`}
+                              className="notion-page-title-icon notion-page-icon"
+                              alt="title"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span
+                              className="notion-page-title-icon notion-page-icon"
+                              role="img"
+                              aria-label={icon}
+                            >
+                              {icon}
+                            </span>
+                          )}
                           <span
-                            className="notion-page-title-icon notion-page-icon"
-                            role="img"
-                            aria-label={icon}
+                            className="notion-page-title-text"
                           >
-                            {icon}
+                            {title}
                           </span>
-                        )}
-                        <span
-                          className="notion-page-title-text"
-                        >
-                          {title}
                         </span>
-                      </span>
-                    </a>
+                      </a>
+                    </Link>
                   );
                 },
               }}

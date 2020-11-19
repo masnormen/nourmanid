@@ -46,7 +46,7 @@ const ArticleIndex = ({ articleList }) => {
           >
             <div>
               <h1
-                className="text-4xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-wood"
+                className="text-6xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-wood"
               >
                 Articles 📔
               </h1>
@@ -64,7 +64,7 @@ const ArticleIndex = ({ articleList }) => {
           </div>
           <div className="z-10">
             <p
-              className="mt-24 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
+              className="mt-24 px-6 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
             >
               ......that's all. Want more? Check out my
               {' '}

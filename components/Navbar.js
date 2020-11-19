@@ -32,7 +32,7 @@ const Navbar = () => (
         <Hyperlink href="/">Home</Hyperlink>
         <Hyperlink href="/works">Works</Hyperlink>
         <Hyperlink href="/articles">Articles</Hyperlink>
-        <Hyperlink href="/contact">Contact 🤙</Hyperlink>
+        {/*<Hyperlink href="/contact">Contact 🤙</Hyperlink>*/}
       </div>
     </div>
   </nav>

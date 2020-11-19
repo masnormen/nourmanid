@@ -1,11 +1,10 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import '../styles/base.css';
 import '../styles/style.css';
-import '../styles/notion.css';
 import '../styles/prism.css';
-// import Scrollbar from 'smooth-scrollbar';
+import 'react-notion-x/src/styles.css';
+import '../styles/notion.css';
 
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
@@ -15,9 +14,9 @@ import Navbar from '../components/Navbar';
 //   WebFont.load({
 //     google: {
 //       families: [
-//         'Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'
-//       ]
-//     }
+//         'Inter:wght@300;400;500;600;800;900&display=swap',
+//       ],
+//     },
 //   });
 // }
 

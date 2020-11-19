@@ -22,7 +22,7 @@ const Index = ({ articleList, worksList }) => (
     <main className="min-w-full">
       {/* Landing section */}
       <section
-        className="relative flex flex-col content-center justify-center flex-grow h-full min-h-screen pb-32 overflow-y-hidden bg-coffeetint pattern-woody"
+        className="relative flex flex-col content-center justify-center flex-grow h-full min-h-screen pb-24 overflow-y-hidden bg-coffeetint pattern-woody"
       >
         {/* SVG */}
         <div className="absolute top-0 left-0 z-0 w-3/4 md:w-5/12">
@@ -53,11 +53,11 @@ const Index = ({ articleList, worksList }) => (
           </svg>
         </div>
         <header
-          className="relative z-10 flex flex-col content-center justify-center flex-grow h-full min-h-screen gap-16 p-20 md:flex-row md:justify-center"
+          className="relative z-10 flex flex-col content-center justify-center flex-grow h-full min-h-screen gap-16 p-16 md:flex-row md:justify-center"
         >
           <img
-            className="self-center h-40 rounded-full md:h-64"
-            src="/assets/portrait1.png"
+            className="self-center h-40 rounded-full md:h-64 md:ml-6"
+            src="/assets/portrait.webp"
             alt="Portrait"
             style={{
               filter: 'grayscale(0.1) brightness(1.1) contrast(1.1)',
@@ -66,7 +66,7 @@ const Index = ({ articleList, worksList }) => (
           />
           <div className="self-center text-center md:text-left">
             <h1
-              className="mb-2 text-4xl font-extrabold leading-tight tracking-tighter md:mb-0 md:text-7xl"
+              className="text-5xl font-extrabold leading-tight tracking-tighter mb-4 md:mb-0 md:text-7xl"
             >
               Hi! I'm
               {' '}
@@ -84,16 +84,14 @@ const Index = ({ articleList, worksList }) => (
                 Linux/UNIX.
               </p>
             </div>
-            <div className="max-w-2xl">
+            <div className="max-w-xl">
               <div
-                className="flex flex-row text-xl font-semibold leading-snug tracking-tighter text-gray-900 md:text-2xl gap-6"
+                className="flex flex-row justify-center md:justify-start text-xl font-semibold leading-snug tracking-tighter text-gray-900 md:text-2xl gap-6"
               >
+                <Hyperlink href="/#about">About</Hyperlink>
                 <Hyperlink href="/works">Works</Hyperlink>
                 <Hyperlink href="/articles">Articles</Hyperlink>
-                <Hyperlink href="/contact">Contact</Hyperlink>
-                {/*Let's see more!*/}
-                {/*{' '}*/}
-                {/*<span className="animate-pulse">👇</span>*/}
+                {/*<Hyperlink href="/contact">Contact</Hyperlink>*/}
               </div>
             </div>
           </div>
@@ -104,7 +102,7 @@ const Index = ({ articleList, worksList }) => (
         >
           <div>
             <h2
-              className="text-4xl font-extrabold leading-tight tracking-tighter text-center text-leaf md:text-6xl"
+              className="text-6xl font-extrabold leading-tight tracking-tighter text-center text-leaf md:text-6xl"
             >
               Works
             </h2>
@@ -119,6 +117,15 @@ const Index = ({ articleList, worksList }) => (
               <ArticleSummary isWork small key={id} {...rest} />
             ))}
           </div>
+        </div>
+        <div className="z-10">
+          <p
+            className="mt-24 px-6 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
+          >
+            my other works are
+            {' '}
+            <Hyperlink href="/articles">here!</Hyperlink>
+          </p>
         </div>
       </section>
       <section
@@ -181,12 +188,11 @@ const Index = ({ articleList, worksList }) => (
           </svg>
         </div>
         <div
-          id="works"
           className="relative z-10 flex flex-col content-center justify-center flex-grow max-w-5xl px-8 pt-24 m-auto"
         >
           <div>
             <h2
-              className="text-4xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-wood"
+              className="text-6xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-wood"
             >
               What I wrote 📔
             </h2>
@@ -204,9 +210,9 @@ const Index = ({ articleList, worksList }) => (
         </div>
         <div className="z-10">
           <p
-            className="mt-24 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
+            className="mt-24 px-6 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
           >
-            ......read more articles
+            read more articles
             {' '}
             <Hyperlink href="/articles">here!</Hyperlink>
           </p>

@@ -8,18 +8,6 @@ const Hyperlink = (props) => {
     href,
     ...otherProps
   } = props;
-  // if (/^(https?:\/\/|\/\/)/i.test(href)) {
-  //   return (
-  //     <a
-  //       className={`link-element ${className || ''}`}
-  //       rel={`noreferrer noopener ${rel || ''}`}
-  //       href={href}
-  //       {...otherProps}
-  //     >
-  //       {children}
-  //     </a>
-  //   );
-  // }
   return (
     <Link href={href}>
       <a
