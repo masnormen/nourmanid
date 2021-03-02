@@ -24,9 +24,10 @@ const ArticleIndex = ({ articleList }) => {
           className="relative flex flex-col content-center justify-center flex-grow h-full min-h-screen pb-24 overflow-y-hidden bg-coffeetint pattern-woody"
         >
           {/* SVG */}
-          <div className="absolute opacity-75 bottom-0 right-0 z-0 w-3/4 -mb-10 transform flip-x md:w-5/12">
+          <div
+            className="absolute opacity-50 bottom-0 right-0 z-0 w-3/4 -mb-10 transform flip-x md:w-5/12">
             <svg
-              className="fill-current text-sunflower"
+              className="fill-current text-indigo-400"
               version="1.1"
               viewBox="0 0 400 750"
               xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +49,10 @@ const ArticleIndex = ({ articleList }) => {
               <h1
                 className="text-6xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-wood"
               >
-                Articles 📔
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-800 to-indigo-600">
+                  Articles
+                </span>
+                {' '}📔
               </h1>
               <p
                 className="mt-3 text-xl font-semibold leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
@@ -56,8 +60,11 @@ const ArticleIndex = ({ articleList }) => {
                 My thoughts and stories (sometimes in Indonesian 🇮🇩)
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-10 mt-24 sm:grid-cols-2">
-              {articleList.map(({ id, ...rest }) => (
+            <div className="grid grid-cols-1 gap-16 mt-24 sm:grid-cols-2">
+              {articleList.map(({
+                id,
+                ...rest
+              }) => (
                 <ArticleSummary key={id} {...rest} />
               ))}
             </div>
@@ -66,9 +73,7 @@ const ArticleIndex = ({ articleList }) => {
             <p
               className="mt-24 px-6 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
             >
-              ......that's all. Want more? Check out my
-              {' '}
-              <Hyperlink href="/#works">works!</Hyperlink>
+              <Hyperlink href="/works">Also check out my works?</Hyperlink>
             </p>
           </div>
         </section>

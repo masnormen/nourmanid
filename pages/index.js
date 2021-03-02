@@ -14,7 +14,10 @@ export const getStaticProps = async () => {
   };
 };
 
-const Index = ({ articleList, worksList }) => (
+const Index = ({
+  articleList,
+  worksList,
+}) => (
   <>
     <Head>
       <title>Nourman Hajar</title>
@@ -22,12 +25,12 @@ const Index = ({ articleList, worksList }) => (
     <main className="min-w-full">
       {/* Landing section */}
       <section
-        className="relative flex flex-col content-center justify-center flex-grow h-full min-h-screen pb-24 overflow-y-hidden bg-coffeetint pattern-woody"
+        className="relative flex flex-col content-center justify-center flex-grow h-full min-h-screen pb-24 bg-coffeetint pattern-woody"
       >
         {/* SVG */}
-        <div className="absolute top-0 left-0 z-0 w-3/4 md:w-5/12">
+        <div className="absolute top-0 left-0 z-0 w-3/4 md:w-5/12 opacity-40">
           <svg
-            className="fill-current text-wood"
+            className="fill-current text-indigo-400"
             version="1.1"
             viewBox="0 0 400 750"
             xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +44,12 @@ const Index = ({ articleList, worksList }) => (
             </g>
           </svg>
         </div>
-        <div className="absolute opacity-75 bottom-0 right-0 z-0 w-full transform rotate-180 md:w-1/2">
+        <div
+          className="absolute bottom-0 right-0 z-0 w-full transform rotate-180 md:w-1/2 opacity-40"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="fill-current text-sunflower"
+            className="fill-current text-yellow-200"
             viewBox="0 0 900 950"
           >
             <path
@@ -53,25 +58,24 @@ const Index = ({ articleList, worksList }) => (
           </svg>
         </div>
         <header
-          className="relative z-10 flex flex-col content-center justify-center flex-grow h-full min-h-screen gap-16 p-16 md:flex-row md:justify-center"
+          className="relative z-10 flex flex-col content-center justify-center flex-grow h-screen min-h-full space-x-0 space-y-6 md:space-x-16 md:space-y-0 p-16 pt-12 md:flex-row md:justify-center"
         >
           <img
-            className="self-center h-40 rounded-full md:h-64 md:ml-6"
-            src="/assets/portrait.webp"
+            className="self-center h-40 rounded-full md:h-64 md:ml-12 shadow-2xl"
+            src="/assets/portrait.png"
             alt="Portrait"
             style={{
-              filter: 'grayscale(0.1) brightness(1.1) contrast(1.1)',
-              boxShadow: '0 0 15px 3px rgba(255, 255, 255, 0.2), 0 2px 4px -1px rgba(255, 255, 255, 0.2)',
+              filter: 'grayscale(0.1) brightness(0.97) contrast(1.05)',
             }}
           />
           <div className="self-center text-center md:text-left">
             <h1
-              className="text-5xl font-extrabold leading-tight tracking-tighter mb-4 md:mb-0 md:text-7xl"
+              className="text-5xl font-extrabold leading-tight tracking-tighter mb-4 md:text-7xl"
             >
-              Hi! I'm
+              Hi! I am
               {' '}
               <span
-                className="text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-yellow-600"
+                className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-800 to-indigo-600"
               >
                 Normen
               </span>
@@ -86,7 +90,7 @@ const Index = ({ articleList, worksList }) => (
             </div>
             <div className="max-w-xl">
               <div
-                className="flex flex-row justify-center md:justify-start text-xl font-semibold leading-snug tracking-tighter text-gray-900 md:text-2xl gap-6"
+                className="flex flex-row justify-center md:justify-start text-xl font-semibold leading-snug tracking-tighter text-gray-900 md:text-2xl space-x-8"
               >
                 <Hyperlink href="/#about">About</Hyperlink>
                 <Hyperlink href="/works">Works</Hyperlink>
@@ -102,7 +106,7 @@ const Index = ({ articleList, worksList }) => (
         >
           <div>
             <h2
-              className="text-6xl font-extrabold leading-tight tracking-tighter text-center text-leaf md:text-6xl"
+              className="text-6xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-300"
             >
               Works
             </h2>
@@ -112,8 +116,11 @@ const Index = ({ articleList, worksList }) => (
               Things I've made in the past 👨‍💻
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 mt-24 sm:grid-cols-3">
-            {worksList.map(({ id, ...rest }) => (
+          <div className="grid grid-cols-1 gap-8 mt-24 sm:grid-cols-3">
+            {worksList.map(({
+              id,
+              ...rest
+            }) => (
               <ArticleSummary isWork small key={id} {...rest} />
             ))}
           </div>
@@ -122,24 +129,22 @@ const Index = ({ articleList, worksList }) => (
           <p
             className="mt-24 px-6 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
           >
-            my other works are
-            {' '}
-            <Hyperlink href="/articles">here!</Hyperlink>
+            <Hyperlink href="/works">See more of my works &rarr;</Hyperlink>
           </p>
         </div>
       </section>
       <section
         id="about"
-        className="relative flex flex-col content-center justify-center flex-grow px-12 py-20 overflow-y-hidden bg-leaf pattern-leafy"
+        className="relative flex flex-col content-center justify-center flex-grow px-12 py-20 overflow-y-hidden bg-blue-900 pattern-celly"
       >
         <div className="self-center md:text-left">
           <h1
             className="mb-6 text-4xl font-extrabold leading-tight tracking-tighter md:text-4xl text-coffeetint"
           >
-            Knock knock, who's there? ✊
+            Hi there! 👋
           </h1>
           <div
-            className="flex flex-col max-w-xl gap-5 text-lg tracking-tight text-justify text-gray-100"
+            className="flex flex-col max-w-xl space-y-4 text-lg tracking-tight text-justify text-gray-100"
           >
             <p>
               My name is
@@ -160,8 +165,8 @@ const Index = ({ articleList, worksList }) => (
             <p>
               Not only am I familiar with data science and analysis using PyData stack (pandas,
               numpy, sklearn), but I am also familiar with full-stack web development. I code
-              using JavaScript, PHP, Python, TailwindCSS, Next.js, and Linux/UNIX env. Oh, and I
-              guess I'm also experienced with drinking coffee! ☕️
+              using JavaScript, PHP, Python, TailwindCSS, Next.js, and Linux/UNIX env. And I
+              guess... I'm also an experienced coffee drinker ☕️
             </p>
           </div>
         </div>
@@ -171,9 +176,11 @@ const Index = ({ articleList, worksList }) => (
         className="relative flex flex-col content-center justify-center flex-grow h-full min-h-screen pb-24 overflow-y-hidden bg-coffeetint pattern-woody"
       >
         {/* SVG */}
-        <div className="absolute opacity-50  top-0 right-0 z-0 w-3/4 mt-10 transform flip-x md:w-5/12">
+        <div
+          className="absolute top-0 right-0 z-0 w-3/4 mt-10 transform flip-x md:w-5/12 opacity-50"
+        >
           <svg
-            className="fill-current text-sunflower"
+            className="fill-current text-indigo-400"
             version="1.1"
             viewBox="0 0 400 750"
             xmlns="http://www.w3.org/2000/svg"
@@ -192,9 +199,9 @@ const Index = ({ articleList, worksList }) => (
         >
           <div>
             <h2
-              className="text-6xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-wood"
+              className="text-6xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-300"
             >
-              What I wrote 📔
+              Articles
             </h2>
             <p
               className="mt-3 text-xl font-semibold leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
@@ -202,8 +209,11 @@ const Index = ({ articleList, worksList }) => (
               My thoughts and stories (sometimes in Indonesian 🇮🇩)
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 mt-24 sm:grid-cols-3">
-            {articleList.map(({ id, ...rest }) => (
+          <div className="grid grid-cols-1 gap-8 mt-24 sm:grid-cols-3">
+            {articleList.map(({
+              id,
+              ...rest
+            }) => (
               <ArticleSummary small key={id} {...rest} />
             ))}
           </div>
@@ -212,9 +222,7 @@ const Index = ({ articleList, worksList }) => (
           <p
             className="mt-24 px-6 text-xl leading-tight tracking-tighter text-center text-gray-800 md:text-2xl"
           >
-            read more articles
-            {' '}
-            <Hyperlink href="/articles">here!</Hyperlink>
+            <Hyperlink href="/works">See more of my articles &rarr;</Hyperlink>
           </p>
         </div>
       </section>

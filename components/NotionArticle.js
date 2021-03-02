@@ -44,12 +44,15 @@ const NotionArticle = ({ article, isWork = false }) => (
               </Hyperlink>
             </p>
             <h1
-              className="mt-8 text-4xl font-extrabold leading-tight tracking-tighter text-center md:text-6xl text-leaf"
+              className="mt-8 text-4xl font-extrabold tracking-tighter text-center md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-800 to-indigo-600"
+              style={{
+                lineHeight: '1.2 !important',
+              }}
             >
               {article.Title}
             </h1>
             <p
-              className="mt-10 text-2xl leading-tight tracking-tighter text-center text-gray-700"
+              className="mt-8 text-xl leading-tight tracking-tighter text-center text-gray-700"
             >
               {article.Summary}
             </p>
@@ -70,13 +73,13 @@ const NotionArticle = ({ article, isWork = false }) => (
               {Array.isArray(article.Category) ? article.Category.map((item) => (
                 <span
                   key={item}
-                  className="px-2 py-1 m-2 text-lg font-semibold text-gray-800 uppercase rounded-md bg-sunflower"
+                  className="px-2 py-1 m-2 text-lg font-semibold text-gray-200 shadow-lg uppercase rounded-md bg-indigo-600"
                 >
                   {item}
                 </span>
               )) : (
                 <span
-                  className="px-2 py-1 m-2 text-lg font-semibold text-gray-800 uppercase rounded-md bg-sunflower"
+                  className="px-2 py-1 m-2 text-lg font-semibold text-gray-200 shadow-lg uppercase rounded-md bg-indigo-600"
                 >
                   {article.Category}
                 </span>

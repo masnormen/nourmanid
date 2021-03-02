@@ -11,7 +11,7 @@
   "extends": "airbnb",
   "rules": {
     "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
-    "react/prop-types": 1,
+    "react/prop-types": 0,
     "react/jsx-props-no-spreading": 0,
     "react/no-unescaped-entities": 0,
     "react/react-in-jsx-scope": 0,
