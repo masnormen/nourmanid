@@ -5,7 +5,7 @@ const Navbar = () => (
     id="header"
     className="flex flex-grow bg-coffeetint pattern-woody py-5 px-16"
   >
-    <div className="flex flex-col md:flex-row justify-center text-xl md:text-base md:justify-between content-center w-full max-w-5xl gap-2 m-auto">
+    <div className="flex flex-col md:flex-row justify-center text-xl md:text-base md:justify-between content-center w-full max-w-5xl space-x-2 space-y-2 md:space-y-0 m-auto">
       <div className="flex justify-center">
         <Hyperlink
           href="/"
@@ -28,7 +28,7 @@ const Navbar = () => (
           Nourman Hajar
         </Hyperlink>
       </div>
-      <div className="flex flex-row flex-wrap justify-center gap-x-4 gap-y-2 md:gap-6">
+      <div className="flex flex-row flex-wrap justify-center space-x-4 md:space-x-6">
         <Hyperlink href="/">Home</Hyperlink>
         <Hyperlink href="/works">Works</Hyperlink>
         <Hyperlink href="/articles">Articles</Hyperlink>

@@ -1,4 +1,4 @@
-import { NotionRenderer } from 'react-notion-x';
+import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x';
 import { getBlockTitle, getBlockIcon } from 'notion-utils';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -94,6 +94,8 @@ const NotionArticle = ({ article, isWork = false }) => (
               fullPage={false}
               darkMode={false}
               components={{
+                // collectionRow: CollectionRow,
+                code: Code,
                 pageLink: (link) => {
                   if (link?.children?.props?.block == null) {
                     return 'Error Rendering this Block';

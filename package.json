@@ -10,12 +10,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^10.0.1",
-    "notion-client": "^2.5.2",
-    "notion-utils": "^2.5.1",
+    "next": "^10.0.7",
+    "notion-client": "^4.3.2",
+    "notion-utils": "^4.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-notion-x": "^2.5.1"
+    "react-notion-x": "^4.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",

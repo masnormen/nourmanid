@@ -28,7 +28,7 @@ const ArticleSummary = ({
           </div>
         </div>
         <div className="flex justify-between p-4">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center space-x-3">
             <span className="mr-1">{pageIcon}</span>
             {Array.isArray(category) ? category.map((item) => (
               <span
