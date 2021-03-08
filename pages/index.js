@@ -58,10 +58,10 @@ const Index = ({
           </svg>
         </div>
         <header
-          className="relative z-10 flex flex-col content-center justify-center flex-grow h-screen min-h-full space-x-0 space-y-6 md:space-x-16 md:space-y-0 p-16 pt-12 md:flex-row md:justify-center"
+          className="relative z-10 flex flex-col content-center justify-center flex-grow h-screen min-h-full space-x-0 space-y-6 md:space-x-16 md:space-y-0 p-16 pt-12 md:flex-row"
         >
           <img
-            className="self-center h-40 rounded-full md:h-64 md:ml-12 shadow-2xl"
+            className="self-center h-40 rounded-full md:h-64 md:ml-16 shadow-2xl"
             src="/assets/portrait.png"
             alt="Portrait"
             style={{
@@ -135,13 +135,13 @@ const Index = ({
       </section>
       <section
         id="about"
-        className="relative flex flex-col content-center justify-center flex-grow px-12 py-20 overflow-y-hidden bg-blue-900 pattern-celly"
+        className="relative flex flex-col content-center justify-center flex-grow px-12 py-28 overflow-y-hidden bg-blue-900 pattern-celly"
       >
         <div className="self-center md:text-left">
           <h1
             className="mb-6 text-4xl font-extrabold leading-tight tracking-tighter md:text-4xl text-coffeetint"
           >
-            Hi there! 👋
+            Hi there! 😄
           </h1>
           <div
             className="flex flex-col max-w-xl space-y-4 text-lg tracking-tight text-justify text-gray-100"
@@ -150,23 +150,21 @@ const Index = ({
               My name is
               {' '}
               <b>Nourman Hajar</b>
-              . But they call me
+              . But people will probably call me
               {' '}
               <b>Normen</b>
               . I'm
-              based in
-              {' '}
-              <b>Malang, Indonesia,</b>
-              {' '}
+              based in Malang, Indonesia,
               studying at Universitas Brawijaya. My passion for learning makes me love dealing &
-              experimenting with data, and discovering valuable insight. I also make designs come
-              to life. I'm always happy to share knowledge and insights with others!
+              experimenting with data, and discovering valuable insight. I'm always happy to share
+              knowledge and insights with others! :)
             </p>
             <p>
               Not only am I familiar with data science and analysis using PyData stack (pandas,
-              numpy, sklearn), but I am also familiar with full-stack web development. I code
-              using JavaScript, PHP, Python, TailwindCSS, Next.js, and Linux/UNIX env. And I
-              guess... I'm also an experienced coffee drinker ☕️
+              numpy, sklearn), but I am also familiar with full-stack web development. Besides
+              using Python for data-related stuff, I mainly code in JavaScript (Node), PHP, and
+              Shell script. I also have a grasp of Linux/UNIX env, React, TailwindCSS, and Next.js.
+              And I guess you could say that drinking coffee is also an experience... no? ☕️
             </p>
           </div>
         </div>
