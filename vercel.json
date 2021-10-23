@@ -1,5 +1,12 @@
 {
 	"trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://docs.google.com/forms/d/e/1FAIpQLSdLpK4YgVfllC1reQujPuNVx1W0y1jnzKdq5DzhfA00b1GG3Q/viewform",
+      "permanent": true
+    }
+  ],
 	"headers": [
 		{
 			"source": "/(.*)",
